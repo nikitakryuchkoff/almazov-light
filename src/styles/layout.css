@@ -9,6 +9,10 @@
     position: relative;
   }
 
+  section[id]:not(#top) {
+    scroll-margin-top: 96px;
+  }
+
   .container {
     margin: 0 auto;
     max-width: 1440px;
@@ -17,6 +21,30 @@
   @media (max-width: 960px) {
     section {
       padding: 80px 24px;
+    }
+
+    section[id]:not(#top) {
+      scroll-margin-top: 84px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    section {
+      padding: 72px 18px;
+    }
+
+    section[id]:not(#top) {
+      scroll-margin-top: 76px;
+    }
+  }
+
+  @media (max-width: 530px) {
+    section {
+      padding: 64px 16px;
+    }
+
+    section[id]:not(#top) {
+      scroll-margin-top: 72px;
     }
   }
 }

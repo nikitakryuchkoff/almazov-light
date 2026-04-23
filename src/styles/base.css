@@ -5,6 +5,10 @@
     color: var(--ink);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -24,5 +28,11 @@
   ::selection {
     background: var(--amber);
     color: #0a0a0a;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }

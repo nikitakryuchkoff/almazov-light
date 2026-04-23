@@ -104,3 +104,47 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 640px) {
+  .card {
+    min-height: auto;
+    padding: 28px 24px;
+  }
+
+  .demo {
+    height: 120px;
+    margin: 20px 0;
+  }
+
+  .title {
+    max-width: none;
+    font-size: 22px;
+  }
+
+  .description {
+    max-width: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .card {
+    padding: 24px 20px;
+  }
+
+  .head {
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .demo {
+    height: 104px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+}

@@ -189,3 +189,50 @@
     padding: 20px 24px;
   }
 }
+
+@media (max-width: 640px) {
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px 18px;
+  }
+
+  .row,
+  .rowTextarea {
+    padding: 18px;
+  }
+
+  .channels {
+    flex-direction: column;
+  }
+
+  .channel {
+    justify-content: flex-start;
+    padding: 16px 18px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .channel:last-child {
+    border-bottom: none;
+  }
+
+  .submitButton {
+    min-height: 56px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 530px) {
+  .eyebrow,
+  .step,
+  .channel,
+  .submitButton {
+    letter-spacing: 0.12em;
+  }
+
+  .row :is(input, textarea, select) {
+    font-size: 15px;
+  }
+}

@@ -25,3 +25,24 @@
   box-shadow: 0 0 12px oklch(70% 0.16 245 / 0.6);
   transition: height 0.3s;
 }
+
+@media (max-width: 640px) {
+  .root {
+    padding-left: 18px;
+  }
+
+  .root::before {
+    top: 16px;
+    bottom: 16px;
+  }
+
+  .root::after {
+    top: 16px;
+  }
+}
+
+@media (max-width: 530px) {
+  .root {
+    padding-left: 14px;
+  }
+}

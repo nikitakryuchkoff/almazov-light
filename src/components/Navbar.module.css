@@ -177,6 +177,7 @@
   .root {
     grid-template-columns: auto auto;
     padding: 16px 24px;
+    column-gap: 16px;
   }
 
   .logoMark {
@@ -195,5 +196,55 @@
 
   .location {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .root {
+    padding: 14px 18px;
+    column-gap: 12px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .logoMark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logoText {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .right {
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .langSwitch {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 530px) {
+  .root {
+    padding: 12px 16px;
+  }
+
+  .logoMark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .langSwitch {
+    gap: 6px;
   }
 }

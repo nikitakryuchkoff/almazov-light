@@ -8,7 +8,6 @@ export const uz: Dictionary = {
     cases: "Loyihalar",
     contact: "Kontaktlar",
     cta: "Ariza qoldirish",
-    location: "TOSHKENT · OCHIQ",
   },
   hero: {
     titleLine1: "Ilhom bag‘ishlovchi",
@@ -20,7 +19,7 @@ export const uz: Dictionary = {
     based: "Joylashuvi",
     basedValue: "TOSHKENT · UZ",
     practice: "Yoʻnalish",
-    practiceValue: "UY · OFIS · KOʻCHA · SANʼAT",
+    practiceValue: "UY · OFIS · KOʻCHA",
     credo: "Falsafa",
     credoValue: "YORUGʻLIK — SANʼAT",
     viewPortfolio: "Loyihalarni koʻrish",

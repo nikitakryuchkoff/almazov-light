@@ -166,3 +166,40 @@
     gap: 16px;
   }
 }
+
+@media (max-width: 640px) {
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 24px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .location {
+    white-space: normal;
+    text-align: left;
+  }
+
+  .tag {
+    top: 16px;
+    left: 16px;
+  }
+}
+
+@media (max-width: 530px) {
+  .meta {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .location {
+    font-size: 10px;
+  }
+}

@@ -8,7 +8,6 @@ export const ru: Dictionary = {
     cases: "Кейсы",
     contact: "Контакты",
     cta: "Оставить заявку",
-    location: "ТАШКЕНТ · ОТКРЫТО",
   },
   hero: {
     titleLine1: "Свет, который",

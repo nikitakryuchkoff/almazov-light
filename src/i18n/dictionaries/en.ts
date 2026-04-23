@@ -6,7 +6,6 @@ export const en = {
     cases: "Cases",
     contact: "Contact",
     cta: "Get a quote",
-    location: "TASHKENT · OPEN",
   },
   hero: {
     titleLine1: "Inspiring",
@@ -18,7 +17,7 @@ export const en = {
     based: "Based in",
     basedValue: "TASHKENT · UZ",
     practice: "Practice",
-    practiceValue: "HOME · OFFICE · STREET · ART",
+    practiceValue: "HOME · OFFICE · STREET",
     credo: "Credo",
     credoValue: "LIGHT AS ART FORM",
     viewPortfolio: "View Cases",

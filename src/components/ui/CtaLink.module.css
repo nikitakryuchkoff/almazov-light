@@ -2,6 +2,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   overflow: hidden;
   padding: 18px 32px;
@@ -61,4 +62,30 @@
 
 .root:hover .arrow {
   transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .root {
+    gap: 12px;
+    padding: 16px 24px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 530px) {
+  .root {
+    padding: 15px 20px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .arrow {
+    width: 12px;
+  }
 }

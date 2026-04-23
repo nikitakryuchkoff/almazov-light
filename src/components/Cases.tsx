@@ -1,12 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 import { cases } from "@/data/portfolio";
-import CasesFilter from "./CasesFilter";
 import CtaLink from "./ui/CtaLink";
 import SectionHeader from "./ui/SectionHeader";
 import styles from "./Cases.module.css";
@@ -18,12 +14,6 @@ export default function Cases({
   locale: Locale;
   dict: Dictionary;
 }) {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const visibleCases = cases.filter(
-    (item) => activeFilter === "all" || item.category === activeFilter,
-  );
-
   return (
     <section id="cases">
       <div className="container">
@@ -37,14 +27,8 @@ export default function Cases({
           }
         />
 
-        {/* <CasesFilter
-          dict={dict}
-          active={activeFilter}
-          onChange={setActiveFilter}
-        /> */}
-
         <div className={styles.grid} data-reveal>
-          {visibleCases.map((item) => {
+          {cases.map((item) => {
             const sizeClass =
               item.size === "wide"
                 ? styles.wide
@@ -96,7 +80,7 @@ export default function Cases({
         </div>
 
         <div className={styles.ctaRow} data-reveal>
-          <CtaLink href={`/${locale}#contact`}>
+          <CtaLink href={`/${locale}#cases`}>
             {dict.cases.fullPortfolio}
           </CtaLink>
         </div>

@@ -37,3 +37,26 @@
     padding-bottom: 24px;
   }
 }
+
+@media (max-width: 640px) {
+  .root {
+    gap: 10px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+  }
+
+  .title {
+    font-size: clamp(32px, 9vw, 48px);
+  }
+}
+
+@media (max-width: 530px) {
+  .root {
+    gap: 8px;
+  }
+
+  .title {
+    font-size: clamp(28px, 10vw, 40px);
+    line-height: 1.05;
+  }
+}

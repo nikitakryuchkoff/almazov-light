@@ -37,11 +37,18 @@ export default function Navbar({
 
   return (
     <nav className={styles.root} ref={navRef} aria-label="Main navigation">
-      <Link className={styles.brand} href={`${home}#top`} aria-label="AlmazovLight">
+      <Link
+        className={styles.brand}
+        href={`${home}#top`}
+        aria-label="AlmazovLight"
+      >
         <svg className={styles.logoMark} viewBox="0 0 44 44" aria-hidden="true">
           <path className={styles.logoFrame} d="M8 35 20 8h4l12 27" />
           <path className={styles.logoCrossbar} d="M15 27h14" />
-          <path className={styles.logoBeam} d="M22 13v-7M10 15l-4-4M34 15l4-4" />
+          <path
+            className={styles.logoBeam}
+            d="M22 13v-7M10 15l-4-4M34 15l4-4"
+          />
           <circle className={styles.logoCore} cx="22" cy="27" r="3.2" />
         </svg>
         <span className={styles.logoText}>
@@ -66,17 +73,16 @@ export default function Navbar({
         </Link>
       </div>
       <div className={styles.right}>
-        <span className={styles.location}>
-          <span className={styles.locDot} />
-          {dict.nav.location}
-        </span>
         <span className={styles.langSwitch} aria-label="Language switcher">
           {(["en", "ru", "uz"] as Locale[]).map((l) => (
             <Link
               key={l}
               href={`/${l}`}
               hrefLang={l}
-              className={[styles.langLink, l === locale ? styles.langLinkActive : ""]
+              className={[
+                styles.langLink,
+                l === locale ? styles.langLinkActive : "",
+              ]
                 .filter(Boolean)
                 .join(" ")}
             >

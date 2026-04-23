@@ -4,12 +4,6 @@ import { services } from "@/data/services";
 import SectionHeader from "./ui/SectionHeader";
 import styles from "./Services.module.css";
 
-const ArrowIcon = () => (
-  <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1">
-    <path d="M2 5 H8 M6 2 L8 5 L6 8" />
-  </svg>
-);
-
 const serviceVizs: Record<string, React.ReactNode> = {
   "concept-development": (
     <svg viewBox="0 0 300 140" className="scene" fill="none">
@@ -201,7 +195,7 @@ export default function Services({
         />
 
         <div className={styles.grid} data-reveal>
-          {services.map((service, index) => (
+          {services.map((service) => (
             <article
               key={service.slug}
               className={styles.card}
