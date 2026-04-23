@@ -1,7 +1,7 @@
 import ProcessTimeline from "./ProcessTimeline";
+import SectionHeader from "./ui/SectionHeader";
 import type { Dictionary } from "@/i18n";
-
-const mono = { fontFamily: "var(--font-mono), ui-monospace, monospace" };
+import styles from "./Process.module.css";
 
 const stepVizs = [
   <svg key="1" viewBox="0 0 160 80" stroke="oklch(78% 0.16 75)" fill="none" strokeWidth="0.8">
@@ -19,11 +19,18 @@ const stepVizs = [
       </linearGradient>
     </defs>
     <rect x="10" y="30" width="140" height="20" fill="url(#m1)" />
-    <text x="10" y="22" fill="rgba(255,255,255,0.4)" fontSize="7">2200K → 4000K</text>
+    <text x="10" y="22" fill="rgba(255,255,255,0.4)" fontSize="7">
+      2200K → 4000K
+    </text>
   </svg>,
   <svg key="3" viewBox="0 0 160 80" stroke="oklch(78% 0.16 75)" fill="none" strokeWidth="0.6">
     <path d="M10 70 L30 40 L50 55 L70 25 L90 45 L110 20 L130 35 L150 15" opacity="0.9" />
-    <path d="M10 70 L30 40 L50 55 L70 25 L90 45 L110 20 L130 35 L150 15 L150 70 Z" fill="oklch(78% 0.16 75)" opacity="0.1" stroke="none" />
+    <path
+      d="M10 70 L30 40 L50 55 L70 25 L90 45 L110 20 L130 35 L150 15 L150 70 Z"
+      fill="oklch(78% 0.16 75)"
+      opacity="0.1"
+      stroke="none"
+    />
     <line x1="10" y1="70" x2="150" y2="70" opacity="0.3" />
   </svg>,
   <svg key="4" viewBox="0 0 160 80" stroke="oklch(78% 0.16 75)" fill="none" strokeWidth="0.6">
@@ -45,7 +52,9 @@ const stepVizs = [
     <circle cx="80" cy="40" r="12" stroke="oklch(78% 0.16 75)" strokeWidth="0.5" opacity="0.6" />
     <circle cx="80" cy="40" r="22" stroke="oklch(78% 0.16 75)" strokeWidth="0.5" opacity="0.35" />
     <circle cx="80" cy="40" r="32" stroke="oklch(78% 0.16 75)" strokeWidth="0.5" opacity="0.15" />
-    <text x="115" y="43" fill="oklch(78% 0.16 75)" fontSize="8">OK</text>
+    <text x="115" y="43" fill="oklch(78% 0.16 75)" fontSize="8">
+      OK
+    </text>
   </svg>,
 ];
 
@@ -53,20 +62,24 @@ export default function Process({ dict }: { dict: Dictionary }) {
   return (
     <section id="process">
       <div className="container">
-        <header className="section-head rv">
-          <div className="section-num" style={mono}>{dict.process.sectionNum}</div>
-          <h2 className="section-title">
-            {dict.process.titleStart}{" "}<em>{dict.process.titleEm}</em>{" "}{dict.process.titleEnd}
-          </h2>
-        </header>
+        <SectionHeader
+          number={dict.process.sectionNum}
+          title={
+            <>
+              {dict.process.titleStart} <em>{dict.process.titleEm}</em> {dict.process.titleEnd}
+            </>
+          }
+        />
 
         <ProcessTimeline>
-          {dict.process.steps.map((step, i) => (
-            <div key={i} className="process-step rv" data-hover>
-              <div className="step-num" style={mono}>{step.num}</div>
-              <div><h3>{step.title}</h3></div>
-              <p>{step.desc}</p>
-              <div className="step-viz">{stepVizs[i]}</div>
+          {dict.process.steps.map((step, index) => (
+            <div key={index} className={styles.step} data-hover data-reveal>
+              <div className={styles.stepNumber}>{step.num}</div>
+              <div>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+              </div>
+              <p className={styles.stepDescription}>{step.desc}</p>
+              <div className={styles.stepViz}>{stepVizs[index]}</div>
             </div>
           ))}
         </ProcessTimeline>

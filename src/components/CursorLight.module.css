@@ -1,0 +1,46 @@
+.light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 520px;
+  height: 520px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle at center,
+    oklch(78% 0.16 75 / 0.18) 0%,
+    oklch(78% 0.16 75 / 0.08) 25%,
+    transparent 55%
+  );
+  mix-blend-mode: screen;
+  transition: opacity 0.4s ease;
+}
+
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: var(--amber);
+  box-shadow:
+    0 0 16px var(--amber),
+    0 0 48px oklch(78% 0.16 75 / 0.6);
+  transition: transform 0.12s ease;
+}
+
+.hover {
+  transform: translate(-50%, -50%) scale(2.4);
+}
+
+@media (max-width: 960px) {
+  .light,
+  .dot {
+    display: none;
+  }
+}

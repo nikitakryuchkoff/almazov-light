@@ -1,0 +1,77 @@
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 200px;
+  gap: 40px;
+  align-items: start;
+  padding: 48px 32px 48px 40px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.5s;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  top: 58px;
+  left: -28px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: all 0.4s;
+}
+
+.step:hover {
+  background: linear-gradient(90deg, oklch(78% 0.16 75 / 0.04), transparent 60%);
+}
+
+.step:hover::before {
+  transform: scale(1.4);
+  border-color: var(--amber);
+  background: var(--amber);
+  box-shadow:
+    0 0 16px var(--amber),
+    0 0 40px oklch(78% 0.16 75 / 0.5);
+}
+
+.stepNumber {
+  color: var(--ink-mute);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.stepTitle {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.stepDescription {
+  max-width: 42ch;
+  color: var(--ink-dim);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.stepViz {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.stepViz svg {
+  width: 160px;
+  height: 80px;
+}
+
+@media (max-width: 960px) {
+  .step {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 32px 16px;
+  }
+}

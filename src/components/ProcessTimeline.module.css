@@ -1,0 +1,27 @@
+.root {
+  position: relative;
+  padding-left: 24px;
+}
+
+.root::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.root::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -1px;
+  width: 3px;
+  height: var(--progress, 0%);
+  background: linear-gradient(to bottom, transparent, var(--amber), transparent);
+  filter: blur(0.5px);
+  box-shadow: 0 0 12px oklch(78% 0.16 75 / 0.6);
+  transition: height 0.3s;
+}

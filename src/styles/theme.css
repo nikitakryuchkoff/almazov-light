@@ -1,0 +1,16 @@
+@layer theme {
+  :root {
+    --bg: #0a0a0a;
+    --bg-1: #0f0f10;
+    --bg-2: #141416;
+    --ink: #f5f4f0;
+    --ink-dim: rgba(245, 244, 240, 0.55);
+    --ink-mute: rgba(245, 244, 240, 0.32);
+    --line: rgba(245, 244, 240, 0.1);
+    --line-2: rgba(245, 244, 240, 0.18);
+    --amber: oklch(78% 0.16 75);
+    --amber-soft: oklch(78% 0.16 75 / 0.25);
+    --blue: oklch(78% 0.14 230);
+    --blue-soft: oklch(78% 0.14 230 / 0.22);
+  }
+}

@@ -1,0 +1,5 @@
+.frame {
+  display: block;
+  border: 0;
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.6);
+}

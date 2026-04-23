@@ -1,10 +1,10 @@
 import Clock from "./Clock";
 import HeroArchSvg from "./svg/HeroArch";
 import HeroBackground from "./HeroBackground";
+import CtaLink from "./ui/CtaLink";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
-
-const mono = { fontFamily: "var(--font-mono), ui-monospace, monospace" };
+import styles from "./Hero.module.css";
 
 export default function Hero({
   locale,
@@ -13,77 +13,76 @@ export default function Hero({
   locale: Locale;
   dict: Dictionary;
 }) {
+  const beams = [
+    [styles.beam, styles.beam1].join(" "),
+    [styles.beam, styles.beam2, styles.cool].join(" "),
+    [styles.beam, styles.beam3].join(" "),
+    [styles.beam, styles.beam4].join(" "),
+    [styles.beam, styles.beam5, styles.cool].join(" "),
+    [styles.beam, styles.beam6].join(" "),
+  ];
+
+  const pools = [
+    [styles.pool, styles.pool1].join(" "),
+    [styles.pool, styles.pool2].join(" "),
+    [styles.pool, styles.pool3].join(" "),
+  ];
+
   return (
-    <section className="hero" id="top">
-      <div className="hero-stage">
+    <section className={styles.root} id="top">
+      <div className={styles.stage}>
         <HeroBackground />
-        <div className="beams">
-          <div className="beam b1" />
-          <div className="beam b2 cool" />
-          <div className="beam b3" />
-          <div className="beam b4" />
-          <div className="beam b5 cool" />
-          <div className="beam b6" />
+        <div className={styles.beams}>
+          {beams.map((className, index) => (
+            <div key={index} className={className} />
+          ))}
         </div>
-        <div className="pool p1" />
-        <div className="pool p2" />
-        <div className="pool p3" />
-        <div className="arch">
+        {pools.map((className, index) => (
+          <div key={index} className={className} />
+        ))}
+        <div className={styles.arch}>
           <HeroArchSvg />
         </div>
       </div>
 
-      <div className="hero-content">
-        <h1 className="hero-title">
-          <span className="reveal">
+      <div className={styles.content}>
+        <h1 className={styles.title}>
+          <span className={styles.titleLine}>
             <span>{dict.hero.titleLine1}</span>
           </span>
           <br />
-          <span className="reveal">
+          <span className={styles.titleLineDelayed}>
             <span>
               <em>{dict.hero.titleLine2}</em>
             </span>
           </span>
         </h1>
 
-        <div className="hero-meta" style={mono}>
-          <div className="kv">
+        <div className={styles.meta}>
+          <div className={styles.metaRow}>
             <span>{dict.hero.studio}</span>
-            <b>{dict.hero.studioValue}</b>
+            <span className={styles.metaValue}>{dict.hero.studioValue}</span>
           </div>
-          <div className="kv">
+          <div className={styles.metaRow}>
             <span>{dict.hero.based}</span>
-            <b>{dict.hero.basedValue}</b>
+            <span className={styles.metaValue}>{dict.hero.basedValue}</span>
           </div>
-          <div className="kv">
+          <div className={styles.metaRow}>
             <span>{dict.hero.practice}</span>
-            <b>{dict.hero.practiceValue}</b>
+            <span className={styles.metaValue}>{dict.hero.practiceValue}</span>
           </div>
-          <div className="kv">
+          <div className={styles.metaRow}>
             <span>{dict.hero.credo}</span>
-            <b>{dict.hero.credoValue}</b>
+            <span className={styles.metaValue}>{dict.hero.credoValue}</span>
           </div>
         </div>
       </div>
 
-      <div className="hero-bottom" style={mono}>
-        <div className="scroll-hint">
-          <span className="scroll-line" />
-        </div>
-        <a href={`/${locale}#cases`} className="cta" data-hover>
-          <span className="dot" />
-          <span>{dict.hero.viewPortfolio}</span>
-          <svg
-            className="arrow"
-            viewBox="0 0 14 10"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-          >
-            <path d="M1 5 H13 M9 1 L13 5 L9 9" />
-          </svg>
-        </a>
-        <div className="ticker">
+      <div className={styles.bottom}>
+        <CtaLink href={`/${locale}#cases`} className={styles.bottomCta}>
+          {dict.hero.viewPortfolio}
+        </CtaLink>
+        <div className={styles.ticker}>
           <span>41.3111° N</span>
           <span>69.2797° E</span>
           <Clock />

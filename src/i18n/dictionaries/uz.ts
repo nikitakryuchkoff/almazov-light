@@ -23,7 +23,6 @@ export const uz: Dictionary = {
     practiceValue: "UY · OFIS · KOʻCHA · SANʼAT",
     credo: "Falsafa",
     credoValue: "YORUGʻLIK — SANʼAT",
-    scrollHint: "Pastga aylantiring",
     viewPortfolio: "Loyihalarni koʻrish",
   },
   about: {

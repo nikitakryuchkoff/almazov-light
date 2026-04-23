@@ -1,9 +1,11 @@
+import styles from "./Hero.module.css";
+
 export default function HeroBackground() {
   return (
-    <div className="hero-bg" aria-hidden="true">
+    <div className={styles.background} aria-hidden="true">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/hero-bg.svg" alt="" />
-      <div className="hero-bg-overlay" />
+      <img className={styles.backgroundImage} src="/hero-bg.svg" alt="" />
+      <div className={styles.backgroundOverlay} />
     </div>
   );
 }

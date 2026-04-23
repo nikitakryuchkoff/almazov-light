@@ -1,5 +1,6 @@
 import { contactInfo } from "@/data/contact";
 import type { Locale } from "@/i18n/config";
+import styles from "./YandexMap.module.css";
 
 const yandexHost: Record<Locale, string> = {
   en: "https://yandex.com/map-widget/v1/",
@@ -15,13 +16,13 @@ export default function YandexMap({ locale }: { locale: Locale }) {
   return (
     <iframe
       src={src}
+      className={styles.frame}
       width="100%"
       height="100%"
       frameBorder={0}
       loading="lazy"
       allowFullScreen
       title={`DILIGHT studio location — ${contactInfo.city[locale]}`}
-      style={{ border: 0, display: "block", filter: "invert(0.92) hue-rotate(180deg) saturate(0.6)" }}
     />
   );
 }

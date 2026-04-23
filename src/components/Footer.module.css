@@ -1,0 +1,87 @@
+.root {
+  position: relative;
+  padding: 80px 40px 40px;
+  border-top: 1px solid var(--line);
+}
+
+.mega {
+  position: relative;
+  margin-bottom: 80px;
+  color: var(--ink);
+  font-size: clamp(72px, 14vw, 240px);
+  font-weight: 300;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  text-align: center;
+}
+
+.mega em {
+  color: var(--amber);
+  font-style: italic;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-dim);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.columnTitle {
+  margin-bottom: 16px;
+  color: var(--ink-mute);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.columns a {
+  display: block;
+  padding: 4px 0;
+}
+
+.columns a:hover {
+  color: var(--amber);
+}
+
+.studioDesc {
+  max-width: 36ch;
+  color: var(--ink-dim);
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-mute);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
+  .root {
+    padding: 60px 24px 24px;
+  }
+
+  .columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

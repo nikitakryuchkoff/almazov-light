@@ -9,14 +9,13 @@ import CursorLight from "@/components/CursorLight";
 import RevealObserver from "@/components/RevealObserver";
 import Footer from "@/components/Footer";
 import ProjectScene from "@/components/svg/ProjectScenes";
-
-const mono = { fontFamily: "var(--font-mono), ui-monospace, monospace" };
+import styles from "./page.module.css";
 
 export function generateStaticParams() {
   const params: { locale: Locale; slug: string }[] = [];
   for (const locale of locales) {
-    for (const c of cases) {
-      params.push({ locale, slug: c.slug });
+    for (const item of cases) {
+      params.push({ locale, slug: item.slug });
     }
   }
   return params;
@@ -29,20 +28,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: localeParam, slug } = await params;
   if (!isLocale(localeParam)) return {};
-  const c = getCaseBySlug(slug);
-  if (!c) return {};
+  const item = getCaseBySlug(slug);
+  if (!item) return {};
 
-  const title = c.title[localeParam];
-  const description = c.shortDescription[localeParam];
+  const title = item.title[localeParam];
+  const description = item.shortDescription[localeParam];
 
   return {
     title,
     description,
     alternates: {
       canonical: `/${localeParam}/portfolio/${slug}`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/portfolio/${slug}`])
-      ),
+      languages: Object.fromEntries(locales.map((locale) => [locale, `/${locale}/portfolio/${slug}`])),
     },
     openGraph: {
       title,
@@ -60,25 +57,26 @@ export default async function CasePage({
 }) {
   const { locale: localeParam, slug } = await params;
   if (!isLocale(localeParam)) notFound();
-  const c = getCaseBySlug(slug);
-  if (!c) notFound();
+
+  const item = getCaseBySlug(slug);
+  if (!item) notFound();
+
   const locale = localeParam;
   const dict = getDictionary(locale);
-
-  const idx = cases.findIndex((x) => x.slug === c.slug);
-  const next = cases[(idx + 1) % cases.length];
+  const currentIndex = cases.findIndex((entry) => entry.slug === item.slug);
+  const nextCase = cases[(currentIndex + 1) % cases.length];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: c.title[locale],
-    description: c.shortDescription[locale],
-    url: `https://almazov-light.uz/${locale}/portfolio/${c.slug}`,
+    name: item.title[locale],
+    description: item.shortDescription[locale],
+    url: `https://almazov-light.uz/${locale}/portfolio/${item.slug}`,
     locationCreated: {
       "@type": "Place",
-      name: c.location[locale],
+      name: item.location[locale],
     },
-    dateCreated: c.year,
+    dateCreated: item.year,
     creator: {
       "@type": "Organization",
       name: "DILIGHT by ALMAZOV",
@@ -93,73 +91,67 @@ export default async function CasePage({
       <Navbar locale={locale} dict={dict} />
       <RevealObserver />
 
-      <main className="case-page">
+      <main className={styles.page}>
         <div className="container">
-          <Link href={`/${locale}#cases`} className="case-back" data-hover>
+          <Link href={`/${locale}#cases`} className={styles.backLink} data-hover>
             <svg width="14" viewBox="0 0 14 10" fill="none" stroke="currentColor" strokeWidth="1.2">
               <path d="M13 5 H1 M5 1 L1 5 L5 9" />
             </svg>
             {dict.caseDetail.backToCases}
           </Link>
 
-          <header className="case-hero">
+          <header className={styles.hero}>
             <div>
-              <div className="section-num" style={mono}>{c.ref}</div>
-              <h1 style={{ marginTop: 24 }}>{c.title[locale]}</h1>
+              <div className={styles.heroNumber}>{item.ref}</div>
+              <h1 className={styles.heroTitle}>{item.title[locale]}</h1>
             </div>
-            <p>{c.shortDescription[locale]}</p>
+            <p className={styles.heroDescription}>{item.shortDescription[locale]}</p>
           </header>
 
-          <div className="case-meta-row" style={mono}>
+          <div className={styles.metaRow}>
             <div>
-              <div className="k">{dict.caseDetail.category}</div>
-              <div className="v" style={{ fontFamily: "var(--font-display)" }}>
-                {c.categoryLabel[locale]}
-              </div>
+              <div className={styles.metaKey}>{dict.caseDetail.category}</div>
+              <div className={styles.metaValue}>{item.categoryLabel[locale]}</div>
             </div>
             <div>
-              <div className="k">{dict.caseDetail.location}</div>
-              <div className="v" style={{ fontFamily: "var(--font-display)" }}>
-                {c.location[locale]}
-              </div>
+              <div className={styles.metaKey}>{dict.caseDetail.location}</div>
+              <div className={styles.metaValue}>{item.location[locale]}</div>
             </div>
             <div>
-              <div className="k">{dict.caseDetail.year}</div>
-              <div className="v" style={{ fontFamily: "var(--font-display)" }}>
-                {c.year}
-              </div>
+              <div className={styles.metaKey}>{dict.caseDetail.year}</div>
+              <div className={styles.metaValue}>{item.year}</div>
             </div>
           </div>
 
-          <div className="case-image rv">
-            <ProjectScene scene={c.scene} />
+          <div className={styles.image} data-reveal>
+            <ProjectScene scene={item.scene} />
           </div>
 
-          <section className="case-blocks rv">
-            <h2 style={mono}>{dict.caseDetail.objective}</h2>
-            <div className="block-body">{c.objective[locale]}</div>
+          <section className={styles.blocks} data-reveal>
+            <h2 className={styles.blocksTitle}>{dict.caseDetail.objective}</h2>
+            <div className={styles.blockBody}>{item.objective[locale]}</div>
           </section>
 
-          <section className="case-blocks rv">
-            <h2 style={mono}>{dict.caseDetail.contribution}</h2>
-            <div className="block-body">
+          <section className={styles.blocks} data-reveal>
+            <h2 className={styles.blocksTitle}>{dict.caseDetail.contribution}</h2>
+            <div className={styles.blockBody}>
               <ul>
-                {c.contribution.map((item, i) => (
-                  <li key={i}>{item[locale]}</li>
+                {item.contribution.map((contribution, index) => (
+                  <li key={index}>{contribution[locale]}</li>
                 ))}
               </ul>
             </div>
           </section>
 
-          <section className="case-blocks rv">
-            <h2 style={mono}>{dict.caseDetail.outcome}</h2>
-            <div className="block-body">{c.outcome[locale]}</div>
+          <section className={styles.blocks} data-reveal>
+            <h2 className={styles.blocksTitle}>{dict.caseDetail.outcome}</h2>
+            <div className={styles.blockBody}>{item.outcome[locale]}</div>
           </section>
 
-          <Link href={`/${locale}/portfolio/${next.slug}`} className="case-next" data-hover>
+          <Link href={`/${locale}/portfolio/${nextCase.slug}`} className={styles.next} data-hover>
             <div>
-              <div className="label" style={mono}>{dict.caseDetail.nextCase}</div>
-              <div className="next-title">{next.title[locale]}</div>
+              <div className={styles.nextLabel}>{dict.caseDetail.nextCase}</div>
+              <div className={styles.nextTitle}>{nextCase.title[locale]}</div>
             </div>
             <svg width="32" viewBox="0 0 14 10" fill="none" stroke="currentColor" strokeWidth="1.2">
               <path d="M1 5 H13 M9 1 L13 5 L9 9" />

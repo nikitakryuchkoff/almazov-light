@@ -1,0 +1,22 @@
+@layer layout {
+  main {
+    position: relative;
+    z-index: 2;
+  }
+
+  section {
+    padding: 120px 40px;
+    position: relative;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+
+  @media (max-width: 960px) {
+    section {
+      padding: 80px 24px;
+    }
+  }
+}

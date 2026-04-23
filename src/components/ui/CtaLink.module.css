@@ -1,0 +1,64 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+  padding: 18px 32px;
+  border: 1px solid var(--line-2);
+  border-radius: 100px;
+  color: var(--ink);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition:
+    border-color 0.4s,
+    color 0.4s;
+}
+
+.root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    oklch(78% 0.16 75 / 0.5),
+    transparent 60%
+  );
+  transition: opacity 0.5s;
+}
+
+.root:hover {
+  border-color: var(--amber);
+}
+
+.root:hover::before {
+  opacity: 1;
+}
+
+.root > * {
+  position: relative;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 12px var(--amber);
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.arrow {
+  width: 14px;
+  transition: transform 0.4s;
+}
+
+.root:hover .arrow {
+  transform: translateX(4px);
+}

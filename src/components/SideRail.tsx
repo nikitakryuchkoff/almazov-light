@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import styles from "./SideRail.module.css";
 
 const sections = [
   { id: "top", label: "00" },
@@ -12,44 +13,40 @@ const sections = [
 ];
 
 export default function SideRail() {
+  const [activeSection, setActiveSection] = useState("top");
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting && e.intersectionRatio > 0.3) {
-            document.querySelectorAll(".side-rail a").forEach((a) => {
-              a.classList.toggle(
-                "active",
-                (a as HTMLAnchorElement).dataset.target === e.target.id
-              );
-            });
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            setActiveSection(entry.target.id);
           }
         });
       },
       { threshold: [0.3, 0.5, 0.7] }
     );
+
     sections.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
     });
+
     return () => observer.disconnect();
   }, []);
 
   return (
-    <aside
-      className="side-rail"
-      style={{ fontFamily: "var(--font-mono), ui-monospace, monospace" }}
-      aria-label="Section navigation"
-    >
-      {sections.map((s) => (
+    <aside className={styles.root} aria-label="Section navigation">
+      {sections.map((section) => (
         <a
-          key={s.id}
-          href={`#${s.id}`}
-          data-target={s.id}
-          className={s.id === "top" ? "active" : ""}
+          key={section.id}
+          href={`#${section.id}`}
+          className={[styles.link, activeSection === section.id ? styles.active : ""]
+            .filter(Boolean)
+            .join(" ")}
         >
-          <span>{s.label}</span>
-          <span className="l" />
+          <span>{section.label}</span>
+          <span className={styles.line} />
         </a>
       ))}
     </aside>

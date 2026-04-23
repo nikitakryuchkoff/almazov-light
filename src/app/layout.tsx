@@ -23,9 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={`${manrope.variable} ${jetbrainsMono.variable}`}>
-      <body style={{ fontFamily: "var(--font-display), system-ui, sans-serif" }}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

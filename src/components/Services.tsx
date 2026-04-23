@@ -1,8 +1,8 @@
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 import { services } from "@/data/services";
-
-const mono = { fontFamily: "var(--font-mono), ui-monospace, monospace" };
+import SectionHeader from "./ui/SectionHeader";
+import styles from "./Services.module.css";
 
 const ArrowIcon = () => (
   <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1">
@@ -26,7 +26,14 @@ const serviceVizs: Record<string, React.ReactNode> = {
       <line x1="20" y1="30" x2="280" y2="30" stroke="rgba(255,255,255,0.1)" />
       {[60, 120, 180, 240].map((x) => (
         <g key={x}>
-          <line x1={x} y1="30" x2={x} y2={x === 60 ? 70 : x === 120 ? 60 : x === 180 ? 75 : 65} stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
+          <line
+            x1={x}
+            y1="30"
+            x2={x}
+            y2={x === 60 ? 70 : x === 120 ? 60 : x === 180 ? 75 : 65}
+            stroke="rgba(255,255,255,0.2)"
+            strokeWidth="0.5"
+          />
           <circle cx={x} cy={x === 60 ? 70 : x === 120 ? 60 : x === 180 ? 75 : 65} r="2" fill="oklch(78% 0.16 75)" />
           <ellipse cx={x} cy="120" rx="28" ry="5" fill="oklch(78% 0.16 75 / 0.3)" />
         </g>
@@ -35,12 +42,12 @@ const serviceVizs: Record<string, React.ReactNode> = {
   ),
   "equipment-selection": (
     <svg viewBox="0 0 300 140" className="scene" fill="none">
-      {[{ x: 60, cx: 85 }, { x: 190, cx: 215 }].map((f) => (
-        <g key={f.x}>
-          <rect x={f.x} y="40" width="50" height="60" fill="#0a0a0a" stroke="rgba(255,255,255,0.15)" />
-          <path d={`M${f.cx} 20 L${f.cx} 40`} stroke="oklch(78% 0.16 75)" strokeWidth="0.8" />
-          <circle cx={f.cx} cy="18" r="3" fill="oklch(78% 0.16 75)" />
-          <ellipse cx={f.cx} cy="70" rx="35" ry="30" fill="oklch(78% 0.16 75 / 0.15)" />
+      {[{ x: 60, cx: 85 }, { x: 190, cx: 215 }].map((fixture) => (
+        <g key={fixture.x}>
+          <rect x={fixture.x} y="40" width="50" height="60" fill="#0a0a0a" stroke="rgba(255,255,255,0.15)" />
+          <path d={`M${fixture.cx} 20 L${fixture.cx} 40`} stroke="oklch(78% 0.16 75)" strokeWidth="0.8" />
+          <circle cx={fixture.cx} cy="18" r="3" fill="oklch(78% 0.16 75)" />
+          <ellipse cx={fixture.cx} cy="70" rx="35" ry="30" fill="oklch(78% 0.16 75 / 0.15)" />
         </g>
       ))}
     </svg>
@@ -85,33 +92,35 @@ export default function Services({ dict, locale }: { dict: Dictionary; locale: L
   return (
     <section id="services">
       <div className="container">
-        <header className="section-head rv">
-          <div className="section-num" style={mono}>{dict.services.sectionNum}</div>
-          <h2 className="section-title">
-            {dict.services.titleStart}{" "}<em>{dict.services.titleEm}</em>{dict.services.titleEnd}
-          </h2>
-        </header>
+        <SectionHeader
+          number={dict.services.sectionNum}
+          title={
+            <>
+              {dict.services.titleStart} <em>{dict.services.titleEm}</em>
+              {dict.services.titleEnd}
+            </>
+          }
+        />
 
-        <div className="services-grid rv">
-          {services.map((s, i) => (
-            <article key={s.slug} className="service" data-hover>
-              <div className="service-head" style={mono}>
-                <span>{s.shortName[locale]}</span>
-                <span className="idx">{s.idx}</span>
+        <div className={styles.grid} data-reveal>
+          {services.map((service, index) => (
+            <article key={service.slug} className={styles.card} data-hover data-radial>
+              <div className={styles.head}>
+                <span>{service.shortName[locale]}</span>
+                <span className={styles.index}>{service.idx}</span>
               </div>
-              <div className="service-demo">{serviceVizs[s.slug]}</div>
+              <div className={styles.demo}>{serviceVizs[service.slug]}</div>
               <div>
-                <h3 style={{
-                  fontSize: 26, fontWeight: 300, letterSpacing: "-0.015em",
-                  lineHeight: 1.15, maxWidth: "14ch",
-                }}>
-                  {s.title[locale]}
-                </h3>
-                <p>{s.description[locale]}</p>
+                <h3 className={styles.title}>{service.title[locale]}</h3>
+                <p className={styles.description}>{service.description[locale]}</p>
               </div>
-              <div className="service-bottom" style={mono}>
-                <span>{String(i + 1).padStart(2, "0")} — {dict.services.enquire}</span>
-                <span className="go"><ArrowIcon /></span>
+              <div className={styles.bottom}>
+                <span>
+                  {String(index + 1).padStart(2, "0")} — {dict.services.enquire}
+                </span>
+                <span className={styles.go}>
+                  <ArrowIcon />
+                </span>
               </div>
             </article>
           ))}

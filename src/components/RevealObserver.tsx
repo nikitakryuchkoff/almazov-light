@@ -4,19 +4,20 @@ import { useEffect } from "react";
 
 export default function RevealObserver() {
   useEffect(() => {
-    const io = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute("data-revealed", "true");
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-    document.querySelectorAll(".rv").forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
   }, []);
 
   return null;
