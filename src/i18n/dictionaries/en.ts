@@ -91,10 +91,6 @@ export const en = {
     titleEnd: ".",
     filters: {
       all: "All cases",
-      facade: "Façade",
-      interior: "Interior",
-      commercial: "Commercial",
-      residential: "Residential",
     },
     selection: "Selection · see more in cases",
     fullPortfolio: "All cases",

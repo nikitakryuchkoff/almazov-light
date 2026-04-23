@@ -24,7 +24,7 @@
   opacity: 0;
   background: radial-gradient(
     circle at var(--mx, 50%) var(--my, 50%),
-    oklch(78% 0.16 75 / 0.5),
+    oklch(70% 0.16 245 / 0.5),
     transparent 60%
   );
   transition: opacity 0.5s;

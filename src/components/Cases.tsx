@@ -11,10 +11,18 @@ import CtaLink from "./ui/CtaLink";
 import SectionHeader from "./ui/SectionHeader";
 import styles from "./Cases.module.css";
 
-export default function Cases({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export default function Cases({
+  locale,
+  dict,
+}: {
+  locale: Locale;
+  dict: Dictionary;
+}) {
   const [activeFilter, setActiveFilter] = useState("all");
 
-  const visibleCases = cases.filter((item) => activeFilter === "all" || item.category === activeFilter);
+  const visibleCases = cases.filter(
+    (item) => activeFilter === "all" || item.category === activeFilter,
+  );
 
   return (
     <section id="cases">
@@ -29,27 +37,32 @@ export default function Cases({ locale, dict }: { locale: Locale; dict: Dictiona
           }
         />
 
-        <CasesFilter dict={dict} active={activeFilter} onChange={setActiveFilter} />
+        {/* <CasesFilter
+          dict={dict}
+          active={activeFilter}
+          onChange={setActiveFilter}
+        /> */}
 
         <div className={styles.grid} data-reveal>
           {visibleCases.map((item) => {
             const sizeClass =
-              item.size === "wide" ? styles.wide : item.size === "tall" ? styles.tall : "";
+              item.size === "wide"
+                ? styles.wide
+                : item.size === "tall"
+                  ? styles.tall
+                  : "";
 
             return (
               <Link
                 key={item.slug}
                 href={`/${locale}/portfolio/${item.slug}`}
-                className={[styles.project, sizeClass].filter(Boolean).join(" ")}
+                className={[styles.project, sizeClass]
+                  .filter(Boolean)
+                  .join(" ")}
                 data-hover
                 aria-label={`${dict.cases.viewCase}: ${item.title[locale]}`}
               >
                 <div className={styles.tag}>{item.ref}</div>
-                <span className={styles.play} aria-hidden>
-                  <svg viewBox="0 0 10 10" fill="currentColor">
-                    <path d="M1 0 L10 5 L1 10 Z" />
-                  </svg>
-                </span>
                 <div className={styles.background}>
                   <Image
                     src={item.image}
@@ -68,7 +81,9 @@ export default function Cases({ locale, dict }: { locale: Locale; dict: Dictiona
                 <div className={styles.overlay} />
                 <div className={styles.meta}>
                   <div>
-                    <div className={styles.category}>{item.categoryLabel[locale]}</div>
+                    <div className={styles.category}>
+                      {item.categoryLabel[locale]}
+                    </div>
                     <h3 className={styles.title}>{item.title[locale]}</h3>
                   </div>
                   <div className={styles.location}>
@@ -81,8 +96,9 @@ export default function Cases({ locale, dict }: { locale: Locale; dict: Dictiona
         </div>
 
         <div className={styles.ctaRow} data-reveal>
-          <span>{dict.cases.selection}</span>
-          <CtaLink href={`/${locale}#contact`}>{dict.cases.fullPortfolio}</CtaLink>
+          <CtaLink href={`/${locale}#contact`}>
+            {dict.cases.fullPortfolio}
+          </CtaLink>
         </div>
       </div>
     </section>

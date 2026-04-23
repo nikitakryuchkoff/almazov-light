@@ -11,8 +11,8 @@ export default function HeroArchSvg() {
           <stop offset="1" stopColor="#1c1c1f" />
         </linearGradient>
         <radialGradient id="glow" cx="0.5" cy="0" r="1">
-          <stop offset="0" stopColor="oklch(78% 0.16 75)" stopOpacity="0.45" />
-          <stop offset="1" stopColor="oklch(78% 0.16 75)" stopOpacity="0" />
+          <stop offset="0" stopColor="oklch(70% 0.16 245)" stopOpacity="0.45" />
+          <stop offset="1" stopColor="oklch(70% 0.16 245)" stopOpacity="0" />
         </radialGradient>
       </defs>
       <path d="M0 0 L920 0 L920 100 L0 100 Z" fill="#0a0a0a" />
@@ -24,7 +24,7 @@ export default function HeroArchSvg() {
         <ellipse key={cx} cx={cx} cy="500" rx="60" ry="8" fill="url(#glow)" />
       ))}
       <rect x="0" y="500" width="920" height="75" fill="url(#floor)" />
-      <rect x="120" y="380" width="680" height="1" fill="oklch(78% 0.16 75 / 0.5)" />
+      <rect x="120" y="380" width="680" height="1" fill="oklch(70% 0.16 245 / 0.5)" />
     </svg>
   );
 }

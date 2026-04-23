@@ -1,43 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
   <defs>
     <radialGradient id="bg" cx="50%" cy="65%" r="85%">
-      <stop offset="0" stop-color="#1a1106"/>
-      <stop offset="35%" stop-color="#0c0a08"/>
+      <stop offset="0" stop-color="#06101a"/>
+      <stop offset="35%" stop-color="#07090c"/>
       <stop offset="100%" stop-color="#000"/>
     </radialGradient>
     <radialGradient id="warmBokeh">
-      <stop offset="0" stop-color="oklch(82% 0.18 75)" stop-opacity="0.55"/>
-      <stop offset="35%" stop-color="oklch(78% 0.16 75)" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="oklch(78% 0.16 75)" stop-opacity="0"/>
+      <stop offset="0" stop-color="oklch(78% 0.14 245)" stop-opacity="0.55"/>
+      <stop offset="35%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="warmCore">
-      <stop offset="0" stop-color="#fff8e8" stop-opacity="0.95"/>
-      <stop offset="20%" stop-color="oklch(85% 0.18 75)" stop-opacity="0.7"/>
-      <stop offset="60%" stop-color="oklch(78% 0.16 75)" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="oklch(78% 0.16 75)" stop-opacity="0"/>
+      <stop offset="0" stop-color="#eaf3ff" stop-opacity="0.95"/>
+      <stop offset="20%" stop-color="oklch(85% 0.10 235)" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="coolBokeh">
-      <stop offset="0" stop-color="oklch(82% 0.14 230)" stop-opacity="0.4"/>
-      <stop offset="40%" stop-color="oklch(78% 0.14 230)" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="oklch(78% 0.14 230)" stop-opacity="0"/>
+      <stop offset="0" stop-color="oklch(85% 0.08 215)" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="oklch(85% 0.08 215)" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="oklch(85% 0.08 215)" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="atmosphereTop" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0" stop-color="#000" stop-opacity="0.55"/>
       <stop offset="40%" stop-color="#000" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="atmosphereBottom" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="oklch(78% 0.16 75)" stop-opacity="0"/>
-      <stop offset="60%" stop-color="oklch(78% 0.16 75)" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="oklch(78% 0.16 75)" stop-opacity="0.18"/>
+      <stop offset="0" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
+      <stop offset="60%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.18"/>
     </linearGradient>
     <linearGradient id="hazeWash" x1="0" x2="1" y1="1" y2="0">
-      <stop offset="0" stop-color="oklch(78% 0.16 75)" stop-opacity="0.12"/>
-      <stop offset="50%" stop-color="oklch(78% 0.16 75)" stop-opacity="0.04"/>
+      <stop offset="0" stop-color="oklch(70% 0.16 245)" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.04"/>
       <stop offset="100%" stop-color="transparent"/>
     </linearGradient>
     <radialGradient id="floorPool" cx="50%" cy="100%" r="60%">
-      <stop offset="0" stop-color="oklch(78% 0.16 75)" stop-opacity="0.32"/>
-      <stop offset="100%" stop-color="oklch(78% 0.16 75)" stop-opacity="0"/>
+      <stop offset="0" stop-color="oklch(70% 0.16 245)" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -67,7 +67,7 @@
   </g>
 
   <!-- City windows -->
-  <g fill="oklch(82% 0.18 75)">
+  <g fill="oklch(78% 0.14 245)">
     <rect x="40"   y="820" width="2" height="3" opacity="0.7"/>
     <rect x="55"   y="850" width="2" height="3" opacity="0.55"/>
     <rect x="75"   y="880" width="2" height="3" opacity="0.6"/>

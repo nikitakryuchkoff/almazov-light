@@ -23,7 +23,7 @@
 }
 
 .step:hover {
-  background: linear-gradient(90deg, oklch(78% 0.16 75 / 0.04), transparent 60%);
+  background: linear-gradient(90deg, oklch(70% 0.16 245 / 0.04), transparent 60%);
 }
 
 .step:hover::before {
@@ -32,7 +32,7 @@
   background: var(--amber);
   box-shadow:
     0 0 16px var(--amber),
-    0 0 40px oklch(78% 0.16 75 / 0.5);
+    0 0 40px oklch(70% 0.16 245 / 0.5);
 }
 
 .stepNumber {

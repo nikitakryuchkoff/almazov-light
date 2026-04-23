@@ -8,9 +8,9 @@
     --ink-mute: rgba(245, 244, 240, 0.32);
     --line: rgba(245, 244, 240, 0.1);
     --line-2: rgba(245, 244, 240, 0.18);
-    --amber: oklch(78% 0.16 75);
-    --amber-soft: oklch(78% 0.16 75 / 0.25);
-    --blue: oklch(78% 0.14 230);
-    --blue-soft: oklch(78% 0.14 230 / 0.22);
+    --amber: oklch(70% 0.16 245);
+    --amber-soft: oklch(70% 0.16 245 / 0.25);
+    --blue: oklch(85% 0.08 215);
+    --blue-soft: oklch(85% 0.08 215 / 0.22);
   }
 }

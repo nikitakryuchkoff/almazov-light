@@ -66,8 +66,8 @@
   background: var(--amber);
   box-shadow:
     0 0 24px var(--amber),
-    0 0 72px oklch(78% 0.16 75 / 0.6),
-    0 0 140px oklch(78% 0.16 75 / 0.3);
+    0 0 72px oklch(70% 0.16 245 / 0.6),
+    0 0 140px oklch(70% 0.16 245 / 0.3);
   animation: pulseBulb 3.2s ease-in-out infinite;
 }
 

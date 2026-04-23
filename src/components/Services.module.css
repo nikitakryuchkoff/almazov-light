@@ -24,7 +24,7 @@
   inset: 0;
   opacity: 0;
   pointer-events: none;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), oklch(78% 0.16 75 / 0.12), transparent 50%);
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), oklch(70% 0.16 245 / 0.12), transparent 50%);
   transition: opacity 0.5s;
 }
 
@@ -96,7 +96,7 @@
 
 .card:hover .go {
   border-color: var(--amber);
-  background: oklch(78% 0.16 75 / 0.15);
+  background: oklch(70% 0.16 245 / 0.15);
 }
 
 @media (max-width: 960px) {
