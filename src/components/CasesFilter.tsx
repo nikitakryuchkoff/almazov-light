@@ -1,5 +1,6 @@
 "use client";
 
+import { cases, type CaseCategory } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n";
 import styles from "./CasesFilter.module.css";
 
@@ -12,13 +13,23 @@ export default function CasesFilter({
   active: string;
   onChange: (key: string) => void;
 }) {
-  const filters = [
-    { key: "all", label: dict.cases.filters.all },
-    { key: "facade", label: dict.cases.filters.facade },
-    { key: "interior", label: dict.cases.filters.interior },
-    { key: "commercial", label: dict.cases.filters.commercial },
-    { key: "residential", label: dict.cases.filters.residential },
-  ];
+  const labels: Record<CaseCategory, string> = {
+    facade: dict.cases.filters.facade,
+    interior: dict.cases.filters.interior,
+    commercial: dict.cases.filters.commercial,
+    residential: dict.cases.filters.residential,
+  };
+
+  const categoryOrder: CaseCategory[] = ["facade", "interior", "commercial", "residential"];
+
+  const availableCategories = categoryOrder.filter((category) => cases.some((item) => item.category === category));
+
+  const filters = [{ key: "all", label: dict.cases.filters.all }].concat(
+    availableCategories.map((category) => ({
+      key: category,
+      label: labels[category],
+    }))
+  );
 
   return (
     <div className={styles.root} data-reveal>

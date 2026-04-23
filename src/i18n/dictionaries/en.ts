@@ -14,7 +14,7 @@ export const en = {
     description:
       "Professional design, installation, and decoration of lighting systems for homes, offices, streets, and art spaces. We elevate light to an art form.",
     studio: "Studio",
-    studioValue: "DILIGHT / ALMAZOV",
+    studioValue: "AlmazovLight",
     based: "Based in",
     basedValue: "TASHKENT · UZ",
     practice: "Practice",
@@ -24,7 +24,7 @@ export const en = {
     viewPortfolio: "View Cases",
   },
   about: {
-    sectionNum: "[ 01 · HOW DILIGHT WORKS ]",
+    sectionNum: "[ 01 · HOW AlmazovLight WORKS ]",
     title: "Professional design, installation",
     titleEm: "decoration",
     titleEnd: "of lighting systems.",
@@ -116,7 +116,7 @@ export const en = {
     statementEm: "lighting that inspires",
     statementEnd: ".",
     studio: "Studio",
-    studioValue: "DILIGHT · Tashkent",
+    studioValue: "AlmazovLight · Tashkent",
     hours: "Hours",
     hoursValue: "Mon — Sat · 10 — 19",
     email: "Email",
@@ -146,7 +146,7 @@ export const en = {
   footer: {
     studio: "Studio",
     studioDesc:
-      "DILIGHT by ALMAZOV — professional design, installation, and decoration of lighting systems for homes, offices, streets, and art spaces. We elevate light to an art form.",
+      "AlmazovLight — professional design, installation, and decoration of lighting systems for homes, offices, streets, and art spaces. We elevate light to an art form.",
     navigate: "Navigate",
     connect: "Connect",
     office: "Office",
@@ -161,14 +161,17 @@ export const en = {
     objective: "Objective",
     contribution: "Our contribution",
     outcome: "Outcome",
+    gallery: "Project gallery",
+    previousImage: "Prev",
+    nextImage: "Next",
     related: "Other cases",
     nextCase: "Next case",
   },
   meta: {
-    title: "DILIGHT by ALMAZOV — Professional Lighting Design in Tashkent",
+    title: "AlmazovLight — Professional Lighting Design in Tashkent",
     description:
       "Professional design, installation, and decoration of lighting systems for homes, offices, streets, and art spaces in Tashkent, Uzbekistan. We elevate light to an art form.",
-    ogTitle: "DILIGHT by ALMAZOV — Inspiring Light",
+    ogTitle: "AlmazovLight — Inspiring Light",
   },
 };
 

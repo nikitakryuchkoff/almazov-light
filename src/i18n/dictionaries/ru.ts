@@ -16,7 +16,7 @@ export const ru: Dictionary = {
     description:
       "Профессиональное проектирование, монтаж и дизайн освещения для домов, офисов, улиц и арт-пространств. Превращаем свет в искусство.",
     studio: "Студия",
-    studioValue: "DILIGHT / ALMAZOV",
+    studioValue: "AlmazovLight",
     based: "Базируется",
     basedValue: "ТАШКЕНТ · UZ",
     practice: "Практика",
@@ -26,7 +26,7 @@ export const ru: Dictionary = {
     viewPortfolio: "Смотреть кейсы",
   },
   about: {
-    sectionNum: "[ 01 · КАК РАБОТАЕТ DILIGHT ]",
+    sectionNum: "[ 01 · КАК РАБОТАЕТ AlmazovLight ]",
     title: "Профессиональное проектирование, монтаж",
     titleEm: "оформление",
     titleEnd: "систем освещения.",
@@ -118,7 +118,7 @@ export const ru: Dictionary = {
     statementEm: "свет, который вдохновляет",
     statementEnd: ".",
     studio: "Студия",
-    studioValue: "DILIGHT · Ташкент",
+    studioValue: "AlmazovLight · Ташкент",
     hours: "Часы",
     hoursValue: "Пн — Сб · 10 — 19",
     email: "Email",
@@ -148,7 +148,7 @@ export const ru: Dictionary = {
   footer: {
     studio: "Студия",
     studioDesc:
-      "DILIGHT by ALMAZOV — профессиональное проектирование, монтаж и оформление систем освещения для домов, офисов, улиц и арт-пространств. Превращаем свет в искусство.",
+      "AlmazovLight — профессиональное проектирование, монтаж и оформление систем освещения для домов, офисов, улиц и арт-пространств. Превращаем свет в искусство.",
     navigate: "Навигация",
     connect: "Связь",
     office: "Офис",
@@ -163,14 +163,17 @@ export const ru: Dictionary = {
     objective: "Задача",
     contribution: "Наш вклад",
     outcome: "Результат",
+    gallery: "Галерея проекта",
+    previousImage: "Назад",
+    nextImage: "Вперёд",
     related: "Другие кейсы",
     nextCase: "Следующий кейс",
   },
   meta: {
     title:
-      "DILIGHT by ALMAZOV — Профессиональное проектирование освещения в Ташкенте",
+      "AlmazovLight — Профессиональное проектирование освещения в Ташкенте",
     description:
       "Профессиональное проектирование, монтаж и дизайн освещения для домов, офисов, улиц и арт-пространств в Ташкенте, Узбекистан. Превращаем свет в искусство.",
-    ogTitle: "DILIGHT by ALMAZOV — Свет, который вдохновляет",
+    ogTitle: "AlmazovLight — Свет, который вдохновляет",
   },
 };

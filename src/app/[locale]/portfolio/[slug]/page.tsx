@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import CursorLight from "@/components/CursorLight";
 import RevealObserver from "@/components/RevealObserver";
 import Footer from "@/components/Footer";
-import ProjectScene from "@/components/svg/ProjectScenes";
+import CaseGallery from "@/components/CaseGallery";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
@@ -46,6 +46,7 @@ export async function generateMetadata({
       description,
       type: "article",
       url: `https://almazov-light.uz/${localeParam}/portfolio/${slug}`,
+      images: item.gallery.map((image) => ({ url: image.src })),
     },
   };
 }
@@ -72,6 +73,7 @@ export default async function CasePage({
     name: item.title[locale],
     description: item.shortDescription[locale],
     url: `https://almazov-light.uz/${locale}/portfolio/${item.slug}`,
+    image: item.gallery.map((image) => image.src),
     locationCreated: {
       "@type": "Place",
       name: item.location[locale],
@@ -79,7 +81,7 @@ export default async function CasePage({
     dateCreated: item.year,
     creator: {
       "@type": "Organization",
-      name: "DILIGHT by ALMAZOV",
+      name: "AlmazovLight",
       url: "https://almazov-light.uz",
     },
   };
@@ -123,9 +125,13 @@ export default async function CasePage({
             </div>
           </div>
 
-          <div className={styles.image} data-reveal>
-            <ProjectScene scene={item.scene} />
-          </div>
+          <CaseGallery
+            images={item.gallery}
+            title={item.title[locale]}
+            label={dict.caseDetail.gallery}
+            previousLabel={dict.caseDetail.previousImage}
+            nextLabel={dict.caseDetail.nextImage}
+          />
 
           <section className={styles.blocks} data-reveal>
             <h2 className={styles.blocksTitle}>{dict.caseDetail.objective}</h2>

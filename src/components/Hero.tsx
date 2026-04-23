@@ -1,5 +1,4 @@
 import Clock from "./Clock";
-import HeroArchSvg from "./svg/HeroArch";
 import HeroBackground from "./HeroBackground";
 import CtaLink from "./ui/CtaLink";
 import type { Dictionary } from "@/i18n";

@@ -37,9 +37,16 @@ export default function Navbar({
 
   return (
     <nav className={styles.root} ref={navRef} aria-label="Main navigation">
-      <Link className={styles.brand} href={`${home}#top`}>
-        <span className={styles.mark} />
-        DILIGHT<span className={styles.slash}>·</span>ALMAZOV
+      <Link className={styles.brand} href={`${home}#top`} aria-label="AlmazovLight">
+        <svg className={styles.logoMark} viewBox="0 0 44 44" aria-hidden="true">
+          <path className={styles.logoFrame} d="M8 35 20 8h4l12 27" />
+          <path className={styles.logoCrossbar} d="M15 27h14" />
+          <path className={styles.logoBeam} d="M22 13v-7M10 15l-4-4M34 15l4-4" />
+          <circle className={styles.logoCore} cx="22" cy="27" r="3.2" />
+        </svg>
+        <span className={styles.logoText}>
+          Almazov<span>Light</span>
+        </span>
       </Link>
       <div className={styles.links}>
         <Link href={`${home}#about`} className={styles.link}>

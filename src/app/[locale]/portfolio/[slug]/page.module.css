@@ -80,14 +80,6 @@
   font-weight: 300;
 }
 
-.image {
-  aspect-ratio: 16 / 9;
-  margin-bottom: 80px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #050505;
-}
-
 .blocks {
   display: grid;
   grid-template-columns: 200px 1fr;

@@ -27,7 +27,7 @@ export default async function Home({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "DILIGHT by ALMAZOV",
+    name: "AlmazovLight",
     description: dict.meta.description,
     url: `https://almazov-light.uz/${locale}`,
     telephone: contactInfo.phone,

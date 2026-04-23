@@ -22,7 +22,7 @@ export default function YandexMap({ locale }: { locale: Locale }) {
       frameBorder={0}
       loading="lazy"
       allowFullScreen
-      title={`DILIGHT studio location — ${contactInfo.city[locale]}`}
+      title={`AlmazovLight studio location — ${contactInfo.city[locale]}`}
     />
   );
 }

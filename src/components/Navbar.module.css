@@ -26,27 +26,74 @@
 }
 
 .brand {
-  display: flex;
+  justify-self: start;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.28em;
+  gap: 12px;
+  color: var(--ink);
+  transition:
+    color 0.3s,
+    opacity 0.3s;
 }
 
-.slash {
+.brand:hover {
   color: var(--amber);
-  font-weight: 300;
 }
 
-.mark {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--amber);
-  box-shadow:
-    0 0 14px var(--amber),
-    0 0 32px oklch(78% 0.16 75 / 0.6);
+.logoMark {
+  width: 38px;
+  height: 38px;
+  overflow: visible;
+  color: var(--amber);
+  filter: drop-shadow(0 0 16px oklch(78% 0.16 75 / 0.34));
+}
+
+.logoFrame,
+.logoCrossbar,
+.logoBeam {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logoFrame {
+  stroke-width: 2.2;
+}
+
+.logoCrossbar {
+  stroke-width: 1.6;
+  opacity: 0.82;
+}
+
+.logoBeam {
+  stroke-width: 1.2;
+  opacity: 0.55;
+}
+
+.logoCore {
+  fill: var(--amber);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.logoText {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.logoText span {
+  color: var(--ink-dim);
+  font-weight: 300;
+  transition: color 0.3s;
+}
+
+.brand:hover .logoText span {
+  color: var(--amber);
 }
 
 .links {
@@ -132,7 +179,21 @@
     padding: 16px 24px;
   }
 
+  .logoMark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logoText {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
   .links {
+    display: none;
+  }
+
+  .location {
     display: none;
   }
 }

@@ -29,6 +29,11 @@
   inset: 0;
 }
 
+.backgroundMedia {
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
 .background::after {
   content: "";
   position: absolute;
@@ -45,6 +50,10 @@
 
 .project:hover .overlay {
   background: radial-gradient(circle at 50% 40%, oklch(78% 0.16 75 / 0.18), transparent 60%);
+}
+
+.project:hover .backgroundMedia {
+  transform: scale(1.04);
 }
 
 .meta {

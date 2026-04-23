@@ -21,7 +21,7 @@ export async function generateMetadata({
   return {
     title: {
       default: t.meta.title,
-      template: "%s | DILIGHT by ALMAZOV",
+      template: "%s | AlmazovLight",
     },
     description: t.meta.description,
     keywords: [
@@ -32,8 +32,8 @@ export async function generateMetadata({
       "Tashkent",
       "Toshkent",
       "Ташкент",
-      "DILIGHT",
-      "ALMAZOV",
+      "AlmazovLight",
+      "Almazov Light",
       "interior lighting",
       "facade lighting",
       "architectural lighting",
@@ -50,7 +50,7 @@ export async function generateMetadata({
       type: "website",
       locale: ogLocale,
       url: `https://almazov-light.uz/${localeParam}`,
-      siteName: "DILIGHT by ALMAZOV",
+      siteName: "AlmazovLight",
       title: t.meta.ogTitle,
       description: t.meta.description,
       images: [

@@ -16,7 +16,7 @@ export const uz: Dictionary = {
     description:
       "Xonadonlar, idoralar, koʻchalar va sanʼat maydonlari uchun yoritish tizimlarini professional loyihalash, oʻrnatish va bezash. Yorugʻlikni sanʼat darajasiga olib chiqamiz.",
     studio: "Studiya",
-    studioValue: "DILIGHT / ALMAZOV",
+    studioValue: "AlmazovLight",
     based: "Joylashuvi",
     basedValue: "TOSHKENT · UZ",
     practice: "Yoʻnalish",
@@ -26,7 +26,7 @@ export const uz: Dictionary = {
     viewPortfolio: "Loyihalarni koʻrish",
   },
   about: {
-    sectionNum: "[ 01 · DILIGHT QANDAY ISHLAYDI ]",
+    sectionNum: "[ 01 · AlmazovLight QANDAY ISHLAYDI ]",
     title: "Yoritish tizimlarini professional loyihalash, oʻrnatish",
     titleEm: "bezash",
     titleEnd: "xizmatlari.",
@@ -118,7 +118,7 @@ export const uz: Dictionary = {
     statementEm: "ilhom bag‘ishlovchi yorug‘lik",
     statementEnd: " yaratamiz.",
     studio: "Studiya",
-    studioValue: "DILIGHT · Toshkent",
+    studioValue: "AlmazovLight · Toshkent",
     hours: "Ish vaqti",
     hoursValue: "Du — Sha · 10 — 19",
     email: "Email",
@@ -148,7 +148,7 @@ export const uz: Dictionary = {
   footer: {
     studio: "Studiya",
     studioDesc:
-      "DILIGHT by ALMAZOV — xonadonlar, idoralar, koʻchalar va sanʼat maydonlari uchun yoritish tizimlarini professional loyihalash, oʻrnatish va bezash. Yorugʻlikni sanʼat darajasiga olib chiqamiz.",
+      "AlmazovLight — xonadonlar, idoralar, koʻchalar va sanʼat maydonlari uchun yoritish tizimlarini professional loyihalash, oʻrnatish va bezash. Yorugʻlikni sanʼat darajasiga olib chiqamiz.",
     navigate: "Navigatsiya",
     connect: "Aloqa",
     office: "Ofis",
@@ -163,13 +163,16 @@ export const uz: Dictionary = {
     objective: "Maqsad",
     contribution: "Bizning hissamiz",
     outcome: "Natija",
+    gallery: "Loyiha galereyasi",
+    previousImage: "Oldingi",
+    nextImage: "Keyingi",
     related: "Boshqa loyihalar",
     nextCase: "Keyingi loyiha",
   },
   meta: {
-    title: "DILIGHT by ALMAZOV — Toshkentdagi professional yoritish dizayni",
+    title: "AlmazovLight — Toshkentdagi professional yoritish dizayni",
     description:
       "Toshkent, Oʻzbekistondagi xonadonlar, idoralar, koʻchalar va sanʼat maydonlari uchun yoritish tizimlarini professional loyihalash, oʻrnatish va bezash. Yorugʻlikni sanʼat darajasiga olib chiqamiz.",
-    ogTitle: "DILIGHT by ALMAZOV — Ilhom bag‘ishlovchi yorug‘lik",
+    ogTitle: "AlmazovLight — Ilhom bag‘ishlovchi yorug‘lik",
   },
 };
