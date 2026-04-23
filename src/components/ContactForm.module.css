@@ -55,7 +55,8 @@
 }
 
 .submitRow {
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  align-items: stretch;
   padding: 0;
 }
 
@@ -94,12 +95,15 @@
 
 .channels {
   display: flex;
+  min-width: 0;
   border-right: 1px solid var(--line);
 }
 
 .channel {
+  flex: 1 1 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 18px 22px;
   border: none;
@@ -143,7 +147,11 @@
 
 .submitButton {
   display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   padding: 18px 28px;
   border: none;
@@ -175,5 +183,9 @@
   .channels {
     border-right: none;
     border-bottom: 1px solid var(--line);
+  }
+
+  .submitButton {
+    padding: 20px 24px;
   }
 }

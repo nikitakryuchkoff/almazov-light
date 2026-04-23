@@ -40,9 +40,6 @@ export default function Hero({
         {pools.map((className, index) => (
           <div key={index} className={className} />
         ))}
-        <div className={styles.arch}>
-          <HeroArchSvg />
-        </div>
       </div>
 
       <div className={styles.content}>

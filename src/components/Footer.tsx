@@ -10,38 +10,41 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
   return (
     <footer className={styles.root}>
       <div className="container">
-        <div className={styles.mega}>
-          DI<em>·</em>LIGHT
-        </div>
         <div className={styles.columns}>
-          <div>
+          <div className={[styles.column, styles.lead].join(" ")}>
             <h6 className={styles.columnTitle}>{dict.footer.studio}</h6>
             <p className={styles.studioDesc}>{dict.footer.studioDesc}</p>
           </div>
-          <div>
+          <div className={styles.column}>
             <h6 className={styles.columnTitle}>{dict.footer.navigate}</h6>
-            <Link href={`${home}#about`}>{dict.nav.about}</Link>
-            <Link href={`${home}#process`}>{dict.nav.process}</Link>
-            <Link href={`${home}#cases`}>{dict.nav.cases}</Link>
-            <Link href={`${home}#services`}>{dict.nav.services}</Link>
+            <div className={styles.linkList}>
+              <Link href={`${home}#about`}>{dict.nav.about}</Link>
+              <Link href={`${home}#process`}>{dict.nav.process}</Link>
+              <Link href={`${home}#cases`}>{dict.nav.cases}</Link>
+              <Link href={`${home}#services`}>{dict.nav.services}</Link>
+            </div>
           </div>
-          <div>
+          <div className={styles.column}>
             <h6 className={styles.columnTitle}>{dict.footer.connect}</h6>
-            <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
-              Telegram
-            </a>
-            <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
-            <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
+            <div className={styles.linkList}>
+              <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
+                Telegram
+              </a>
+              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
+              <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            </div>
           </div>
-          <div>
+          <div className={styles.column}>
             <h6 className={styles.columnTitle}>{dict.footer.office}</h6>
-            <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-            <a href={`tel:${contactInfo.phone}`}>{contactInfo.phoneDisplay}</a>
-            <span>RU / EN / UZ</span>
+            <div className={styles.linkList}>
+              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+              <a href={`tel:${contactInfo.phone}`}>{contactInfo.phoneDisplay}</a>
+              <span className={styles.metaText}>RU / EN / UZ</span>
+            </div>
           </div>
         </div>
         <div className={styles.bottom}>
