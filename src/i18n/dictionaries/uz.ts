@@ -93,10 +93,6 @@ export const uz: Dictionary = {
     titleEnd: ".",
     filters: {
       all: "Barcha loyihalar",
-      facade: "Fasad",
-      interior: "Interyer",
-      commercial: "Kommertsiya",
-      residential: "Uy-joy",
     },
     selection: "Tanlangan · barcha loyihalarni koʻring",
     fullPortfolio: "Barcha loyihalar",
