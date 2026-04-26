@@ -81,5 +81,11 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <div data-locale={locale satisfies Locale}>{children}</div>;
+  // Nested `lang` per HTML5 spec — scopes language for screen readers and
+  // crawlers without forcing the root <html> tag to be dynamic.
+  return (
+    <div lang={locale satisfies Locale} data-locale={locale}>
+      {children}
+    </div>
+  );
 }

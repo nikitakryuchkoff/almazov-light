@@ -67,13 +67,14 @@ export default async function CasePage({
   const currentIndex = cases.findIndex((entry) => entry.slug === item.slug);
   const nextCase = cases[(currentIndex + 1) % cases.length];
 
+  const baseUrl = "https://almazov-light.uz";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: item.title[locale],
     description: item.shortDescription[locale],
-    url: `https://almazov-light.uz/${locale}/portfolio/${item.slug}`,
-    image: item.gallery.map((image) => image.src),
+    url: `${baseUrl}/${locale}/portfolio/${item.slug}`,
+    image: item.gallery.map((image) => `${baseUrl}${image.src}`),
     locationCreated: {
       "@type": "Place",
       name: item.location[locale],
@@ -82,8 +83,33 @@ export default async function CasePage({
     creator: {
       "@type": "Organization",
       name: "AlmazovLight",
-      url: "https://almazov-light.uz",
+      url: baseUrl,
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "AlmazovLight",
+        item: `${baseUrl}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: dict.nav.cases,
+        item: `${baseUrl}/${locale}#cases`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: item.title[locale],
+        item: `${baseUrl}/${locale}/portfolio/${item.slug}`,
+      },
+    ],
   };
 
   return (
@@ -171,6 +197,10 @@ export default async function CasePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

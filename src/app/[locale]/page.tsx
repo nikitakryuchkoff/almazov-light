@@ -15,6 +15,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { contactInfo } from "@/data/contact";
 import { services } from "@/data/services";
+import { faqItems } from "@/data/faq";
 
 export default async function Home({
   params,
@@ -24,6 +25,20 @@ export default async function Home({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
+
+  const localeFaqItems = faqItems[locale];
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: localeFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -83,6 +98,10 @@ export default async function Home({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
     </>
   );

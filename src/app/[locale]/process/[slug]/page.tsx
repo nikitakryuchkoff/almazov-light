@@ -158,17 +158,43 @@ export default async function ProcessStepPage({
       ? processSteps[currentIndex + 1]
       : null;
 
+  const baseUrl = "https://almazov-light.uz";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: step.title[locale],
     description: step.summary[locale],
-    url: `https://almazov-light.uz/${locale}/process/${step.slug}`,
+    url: `${baseUrl}/${locale}/process/${step.slug}`,
     provider: {
       "@type": "Organization",
       name: "AlmazovLight",
-      url: "https://almazov-light.uz",
+      url: baseUrl,
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "AlmazovLight",
+        item: `${baseUrl}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: dict.nav.process,
+        item: `${baseUrl}/${locale}#process`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: step.title[locale],
+        item: `${baseUrl}/${locale}/process/${step.slug}`,
+      },
+    ],
   };
 
   return (
@@ -280,6 +306,10 @@ export default async function ProcessStepPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

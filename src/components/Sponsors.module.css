@@ -47,10 +47,6 @@
   will-change: transform;
 }
 
-.marquee:hover .track {
-  animation-play-state: paused;
-}
-
 .item {
   /* margin-right (vs grid gap) carries the spacing INSIDE each item so the
      three duplicated copies of the track tile seamlessly at -33.333% translateX. */
@@ -66,21 +62,6 @@
   border-radius: 18px;
   background: #f1f0eb;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
-  transition:
-    border-color 0.4s ease,
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    background-color 0.4s ease;
-}
-
-.item:hover {
-  border-color: var(--amber);
-  background: #ffffff;
-  transform: translateY(-4px);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.45),
-    0 0 0 1px var(--amber),
-    0 0 24px oklch(70% 0.16 245 / 0.35);
 }
 
 .logo {
@@ -89,19 +70,7 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(0.55);
-  opacity: 0.9;
-  transition:
-    filter 0.5s ease,
-    opacity 0.5s ease,
-    transform 0.5s ease;
   user-select: none;
-}
-
-.item:hover .logo {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.04);
 }
 
 @keyframes marquee {

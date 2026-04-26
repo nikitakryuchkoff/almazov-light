@@ -22,7 +22,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${manrope.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      className={`${manrope.variable} ${jetbrainsMono.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <body>{children}</body>
     </html>
   );

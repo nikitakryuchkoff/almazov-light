@@ -46,7 +46,6 @@ export default function Cases({
                 data-hover
                 aria-label={`${dict.cases.viewCase}: ${item.title[locale]}`}
               >
-                <div className={styles.tag}>{item.ref}</div>
                 <div className={styles.background}>
                   <Image
                     src={item.image}
@@ -54,12 +53,6 @@ export default function Cases({
                     fill
                     quality={92}
                     className={styles.backgroundMedia}
-                    sizes={
-                      item.size === "wide"
-                        ? "(max-width: 960px) 100vw, 1440px"
-                        : "(max-width: 960px) 100vw, 720px"
-                    }
-                    style={{ objectPosition: item.imagePosition ?? "50% 50%" }}
                   />
                 </div>
                 <div className={styles.overlay} />
