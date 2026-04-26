@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import styles from "./Clock.module.css";
 
 export default function Clock() {
   const [time, setTime] = useState("--:--:-- LOC");
@@ -22,5 +23,5 @@ export default function Clock() {
     return () => clearInterval(id);
   }, []);
 
-  return <span>{time}</span>;
+  return <span className={styles.root}>{time}</span>;
 }

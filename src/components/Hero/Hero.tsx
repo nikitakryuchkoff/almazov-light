@@ -1,7 +1,7 @@
-import Clock from "./Clock";
-import HeroBackground from "./HeroBackground";
-import CtaLink from "./ui/CtaLink";
+import Clock from "@/components/Clock";
+import HeroBackground from "@/components/HeroBackground";
 import type { Dictionary } from "@/i18n";
+import CtaLink from "@/components/ui/CtaLink";
 import type { Locale } from "@/i18n/config";
 import styles from "./Hero.module.css";
 

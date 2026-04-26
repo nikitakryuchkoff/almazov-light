@@ -29,71 +29,16 @@
   justify-self: start;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   color: var(--ink);
   transition:
     color 0.3s,
     opacity 0.3s;
 }
 
-.brand:hover {
-  color: var(--amber);
-}
-
-.logoMark {
-  width: 38px;
-  height: 38px;
-  overflow: visible;
-  color: var(--amber);
-  filter: drop-shadow(0 0 16px oklch(70% 0.16 245 / 0.34));
-}
-
-.logoFrame,
-.logoCrossbar,
-.logoBeam {
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.logoFrame {
-  stroke-width: 2.2;
-}
-
-.logoCrossbar {
-  stroke-width: 1.6;
-  opacity: 0.82;
-}
-
-.logoBeam {
-  stroke-width: 1.2;
-  opacity: 0.55;
-}
-
-.logoCore {
-  fill: var(--amber);
-  filter: drop-shadow(0 0 10px currentColor);
-}
-
-.logoText {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 2px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.logoText span {
-  color: var(--ink-dim);
-  font-weight: 300;
-  transition: color 0.3s;
-}
-
-.brand:hover .logoText span {
-  color: var(--amber);
+.logoImage {
+  width: auto;
+  height: 48px;
+  display: block;
 }
 
 .links {
@@ -144,6 +89,88 @@
   letter-spacing: 0.12em;
 }
 
+.menuButton {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menuButton:hover {
+  color: var(--amber);
+}
+
+.menuButton:focus-visible {
+  color: var(--amber);
+}
+
+.menuBar {
+  width: 16px;
+  height: 1px;
+  margin: 0 auto;
+  background: currentColor;
+  transform-origin: center;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.menuButtonActive .menuBar:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.menuButtonActive .menuBar:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonActive .menuBar:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+.mobilePanel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 24px;
+  left: 24px;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(17, 17, 17, 0.98), rgba(10, 10, 10, 0.95)),
+    var(--bg);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+}
+
+.mobileLink {
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.mobileLink:last-child {
+  border-bottom: none;
+}
+
+.mobileLink:hover {
+  color: var(--amber);
+}
+
 .location {
   white-space: nowrap;
 }
@@ -180,18 +207,20 @@
     column-gap: 16px;
   }
 
-  .logoMark {
-    width: 34px;
-    height: 34px;
-  }
-
-  .logoText {
-    font-size: 12px;
-    letter-spacing: 0.12em;
+  .logoImage {
+    height: 42px;
   }
 
   .links {
     display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .mobilePanel {
+    display: flex;
   }
 
   .location {
@@ -205,18 +234,17 @@
     column-gap: 12px;
   }
 
+  .mobilePanel {
+    right: 18px;
+    left: 18px;
+  }
+
   .brand {
-    gap: 10px;
+    gap: 0;
   }
 
-  .logoMark {
-    width: 30px;
-    height: 30px;
-  }
-
-  .logoText {
-    font-size: 11px;
-    letter-spacing: 0.1em;
+  .logoImage {
+    height: 34px;
   }
 
   .right {
@@ -234,14 +262,13 @@
     padding: 12px 16px;
   }
 
-  .logoMark {
-    width: 28px;
-    height: 28px;
+  .mobilePanel {
+    right: 16px;
+    left: 16px;
   }
 
-  .logoText {
-    font-size: 10px;
-    letter-spacing: 0.08em;
+  .logoImage {
+    height: 30px;
   }
 
   .langSwitch {

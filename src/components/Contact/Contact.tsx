@@ -1,6 +1,6 @@
-import ContactForm from "./ContactForm";
-import YandexMap from "./YandexMap";
-import SectionHeader from "./ui/SectionHeader";
+import ContactForm from "@/components/ContactForm";
+import YandexMap from "@/components/YandexMap";
+import SectionHeader from "@/components/ui/SectionHeader";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 import { contactInfo } from "@/data/contact";

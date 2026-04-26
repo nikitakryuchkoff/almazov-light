@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/config";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { faqItems, faqSectionCopy } from "@/data/faq";
-import SectionHeader from "./ui/SectionHeader";
 import styles from "./Faq.module.css";
 
 export default function Faq({

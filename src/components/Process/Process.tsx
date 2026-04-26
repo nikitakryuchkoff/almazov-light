@@ -1,7 +1,7 @@
 import Link from "next/link";
-import ProcessTimeline from "./ProcessTimeline";
-import SectionHeader from "./ui/SectionHeader";
 import type { Dictionary } from "@/i18n";
+import ProcessTimeline from "@/components/ProcessTimeline";
+import SectionHeader from "@/components/ui/SectionHeader";
 import type { Locale } from "@/i18n/config";
 import { PROCESS_SLUGS } from "@/data/processSteps";
 import styles from "./Process.module.css";

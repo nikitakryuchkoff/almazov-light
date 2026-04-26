@@ -1,4 +1,4 @@
-import SectionHeader from "./ui/SectionHeader";
+import SectionHeader from "@/components/ui/SectionHeader";
 import type { Dictionary } from "@/i18n";
 import styles from "./About.module.css";
 

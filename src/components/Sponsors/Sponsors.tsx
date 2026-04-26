@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { sponsors } from "@/data/sponsors";
-import SectionHeader from "./ui/SectionHeader";
 import styles from "./Sponsors.module.css";
 
 export default function Sponsors({

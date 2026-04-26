@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n";
+import CtaLink from "@/components/ui/CtaLink";
+import SectionHeader from "@/components/ui/SectionHeader";
 import type { Locale } from "@/i18n/config";
 import { cases } from "@/data/portfolio";
-import CtaLink from "./ui/CtaLink";
-import SectionHeader from "./ui/SectionHeader";
 import styles from "./Cases.module.css";
 
 export default function Cases({

@@ -1,4 +1,4 @@
-import styles from "./Hero.module.css";
+import styles from "./HeroBackground.module.css";
 
 export default function HeroBackground() {
   return (
