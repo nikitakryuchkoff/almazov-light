@@ -42,14 +42,16 @@
   font-size: clamp(48px, 6vw, 88px);
   font-weight: 300;
   letter-spacing: -0.035em;
-  line-height: 1;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .heroDescription {
-  max-width: 52ch;
-  color: var(--ink-dim);
-  font-size: 17px;
-  line-height: 1.55;
+  max-width: 56ch;
+  color: rgba(245, 244, 240, 0.82);
+  font-size: 19px;
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .body {
@@ -59,8 +61,8 @@
 }
 
 .lead {
-  margin: 32px 0 64px;
-  padding: 32px 0;
+  margin: 32px 0 72px;
+  padding: 36px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: var(--amber);
@@ -68,33 +70,38 @@
   font-weight: 300;
   font-style: italic;
   letter-spacing: -0.015em;
-  line-height: 1.25;
-  max-width: 28ch;
+  line-height: 1.3;
+  max-width: 32ch;
+  text-wrap: balance;
 }
 
 .para {
-  margin: 0 0 48px;
-  max-width: 64ch;
+  margin: 0 0 56px;
+  max-width: 68ch;
   color: var(--ink);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.7;
+  text-wrap: pretty;
 }
 
 .section {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 48px;
-  padding: 48px 0;
+  grid-template-columns: 180px 1fr;
+  gap: 56px;
+  padding: 56px 0;
   border-top: 1px solid var(--line);
 }
 
 .sectionHeading {
+  position: sticky;
+  top: 100px;
+  align-self: start;
   color: var(--ink-mute);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
@@ -102,19 +109,20 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 64ch;
+  max-width: 68ch;
 }
 
 .listItem {
   display: grid;
-  grid-template-columns: 16px 1fr;
-  gap: 16px;
+  grid-template-columns: 18px 1fr;
+  gap: 18px;
   align-items: flex-start;
-  padding: 16px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--line);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 1.55;
+  line-height: 1.65;
+  text-wrap: pretty;
 }
 
 .listItem:first-child {
@@ -123,7 +131,7 @@
 }
 
 .listMark {
-  margin-top: 10px;
+  margin-top: 12px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -138,15 +146,15 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  max-width: 70ch;
+  max-width: 72ch;
 }
 
 .stepItem {
   display: grid;
   grid-template-columns: 56px 1fr;
-  gap: 24px;
+  gap: 28px;
   align-items: flex-start;
-  padding: 28px 0;
+  padding: 32px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -159,25 +167,27 @@
   color: var(--amber);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
-  letter-spacing: 0.2em;
-  padding-top: 6px;
+  letter-spacing: 0.22em;
+  padding-top: 10px;
 }
 
 .stepTitle {
-  margin: 0 0 10px;
-  font-size: 22px;
+  margin: 0 0 14px;
+  font-size: 24px;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.012em;
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 .stepBody {
   margin: 0;
-  color: var(--ink-dim);
-  font-size: 16px;
+  color: rgba(245, 244, 240, 0.78);
+  font-size: 18px;
   font-weight: 300;
-  line-height: 1.6;
-  max-width: 60ch;
+  line-height: 1.7;
+  max-width: 64ch;
+  text-wrap: pretty;
 }
 
 .tableWrap {
@@ -193,11 +203,11 @@
 }
 
 .table thead th {
-  padding: 16px 20px;
+  padding: 18px 24px;
   background: var(--bg-2);
   color: var(--ink-mute);
   font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -206,8 +216,10 @@
 }
 
 .table tbody td {
-  padding: 16px 20px;
+  padding: 20px 24px;
+  font-size: 16px;
   font-weight: 300;
+  line-height: 1.5;
   border-bottom: 1px solid var(--line);
 }
 
@@ -219,7 +231,7 @@
 .table tbody td:not(:first-child) {
   color: var(--amber);
   font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .table tbody tr:last-child td {
@@ -333,15 +345,63 @@
     gap: 32px;
   }
 
+  .heroDescription {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
   .section {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 32px 0;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .sectionHeading {
+    position: static;
   }
 
   .lead {
     font-size: 22px;
-    margin: 24px 0 40px;
+    line-height: 1.35;
+    margin: 24px 0 48px;
+    padding: 28px 0;
+  }
+
+  .para {
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 40px;
+  }
+
+  .listItem {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 16px 0;
+  }
+
+  .stepItem {
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    padding: 24px 0;
+  }
+
+  .stepTitle {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+
+  .stepBody {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .table thead th {
+    padding: 14px 16px;
+  }
+
+  .table tbody td {
+    padding: 16px;
+    font-size: 15px;
   }
 
   .allStepsList {
