@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
+import { getAbsoluteSiteUrl } from "@/utils/site";
+
+const SITE_TITLE = "ALMAVZOV - ALMAZOV";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -20,8 +23,8 @@ export async function generateMetadata({
 
   return {
     title: {
-      default: t.meta.title,
-      template: "%s | AlmazovLight",
+      default: SITE_TITLE,
+      template: `%s | ${SITE_TITLE}`,
     },
     description: t.meta.description,
     keywords: [
@@ -49,7 +52,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: ogLocale,
-      url: `https://almazov-light.uz/${localeParam}`,
+      url: getAbsoluteSiteUrl(`/${localeParam}`),
       siteName: "AlmazovLight",
       title: t.meta.ogTitle,
       description: t.meta.description,

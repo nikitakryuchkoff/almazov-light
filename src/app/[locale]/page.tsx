@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 import { contactInfo } from "@/data/contact";
 import { services } from "@/data/services";
 import { faqItems } from "@/data/faq";
+import { getAbsoluteSiteUrl } from "@/utils/site";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -41,7 +42,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     "@type": "LocalBusiness",
     name: "AlmazovLight",
     description: dict.meta.description,
-    url: `https://almazov-light.uz/${locale}`,
+    url: getAbsoluteSiteUrl(`/${locale}`),
     telephone: contactInfo.phone,
     email: contactInfo.email,
     address: {
@@ -55,7 +56,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       longitude: contactInfo.geo.lng.toString(),
     },
     openingHours: "Mo-Sa 10:00-19:00",
-    image: "https://almazov-light.uz/og-image.jpg",
+    image: getAbsoluteSiteUrl("/og-image.jpg"),
     priceRange: "$$",
     hasOfferCatalog: {
       "@type": "OfferCatalog",

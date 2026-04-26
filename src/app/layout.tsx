@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, JetBrains_Mono } from "next/font/google";
+import { getSiteUrl } from "@/utils/site";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -17,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://almazov-light.uz"),
+  metadataBase: new URL(getSiteUrl()),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

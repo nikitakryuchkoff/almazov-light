@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import CursorLight from "@/components/CursorLight";
 import RevealObserver from "@/components/RevealObserver";
 import Footer from "@/components/Footer";
+import { getAbsoluteSiteUrl, getSiteUrl } from "@/utils/site";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
@@ -44,7 +45,7 @@ export async function generateMetadata({
       title,
       description,
       type: "article",
-      url: `https://almazov-light.uz/${localeParam}/process/${slug}`,
+      url: getAbsoluteSiteUrl(`/${localeParam}/process/${slug}`),
     },
   };
 }
@@ -138,13 +139,13 @@ export default async function ProcessStepPage({
       ? processSteps[currentIndex + 1]
       : null;
 
-  const baseUrl = "https://almazov-light.uz";
+  const baseUrl = getSiteUrl();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: step.title[locale],
     description: step.summary[locale],
-    url: `${baseUrl}/${locale}/process/${step.slug}`,
+    url: getAbsoluteSiteUrl(`/${locale}/process/${step.slug}`),
     provider: {
       "@type": "Organization",
       name: "AlmazovLight",

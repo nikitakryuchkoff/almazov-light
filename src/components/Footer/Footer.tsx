@@ -1,3 +1,4 @@
+import { Camera, MessageCircle, Send } from "lucide-react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
@@ -29,14 +30,22 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
           <div className={styles.column}>
             <h6 className={styles.columnTitle}>{dict.footer.connect}</h6>
             <div className={styles.linkList}>
-              <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
-                Telegram
+              <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                <Send size={14} strokeWidth={1.8} aria-hidden="true" />
+                <span>Telegram</span>
               </a>
-              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
-                WhatsApp
+              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                <MessageCircle size={14} strokeWidth={1.8} aria-hidden="true" />
+                <span>WhatsApp</span>
               </a>
-              <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer">
-                Instagram
+              <a
+                href={contactInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+              >
+                <Camera size={14} strokeWidth={1.8} aria-hidden="true" />
+                <span>Instagram</span>
               </a>
             </div>
           </div>
@@ -51,7 +60,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
         </div>
         <div className={styles.bottom}>
           <span>
-            © {new Date().getFullYear()} AlmazovLight · {dict.footer.rights}
+            В© {new Date().getFullYear()} AlmazovLight В· {dict.footer.rights}
           </span>
           <span>{dict.footer.inspiring}</span>
         </div>

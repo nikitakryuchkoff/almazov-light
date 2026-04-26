@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { getAbsoluteSiteUrl } from "@/utils/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://almazov-light.uz/sitemap.xml",
+    sitemap: getAbsoluteSiteUrl("/sitemap.xml"),
   };
 }

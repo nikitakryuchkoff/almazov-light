@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { type CSSProperties, useEffect, useRef, useState } from "react";
 import type { CaseGalleryImage } from "@/data/portfolio";
 import styles from "./CaseGallery.module.css";
 
@@ -19,8 +19,22 @@ export default function CaseGallery({
   nextLabel: string;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const thumbRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const activeImage = images[activeIndex] ?? images[0];
   const total = images.length;
+  const useCompactThumbs = total <= 4;
+
+  useEffect(() => {
+    if (useCompactThumbs) {
+      return;
+    }
+
+    thumbRefs.current[activeIndex]?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }, [activeIndex, useCompactThumbs]);
 
   if (!activeImage) return null;
 
@@ -83,10 +97,25 @@ export default function CaseGallery({
       </div>
 
       {total > 1 ? (
-        <div className={styles.thumbs} aria-label={label}>
+        <div
+          className={[styles.thumbs, useCompactThumbs ? styles.thumbsCompact : ""]
+            .filter(Boolean)
+            .join(" ")}
+          aria-label={label}
+          style={
+            useCompactThumbs
+              ? ({
+                  "--thumb-count": total,
+                } as CSSProperties)
+              : undefined
+          }
+        >
           {images.map((image, index) => (
             <button
               key={image.src}
+              ref={(node) => {
+                thumbRefs.current[index] = node;
+              }}
               type="button"
               className={[styles.thumb, activeIndex === index ? styles.active : ""]
                 .filter(Boolean)

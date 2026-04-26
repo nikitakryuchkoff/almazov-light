@@ -57,7 +57,7 @@ export default function Contact({ dict, locale }: { dict: Dictionary; locale: Lo
             </div>
           </div>
 
-          <ContactForm dict={dict} />
+          <ContactForm dict={dict} locale={locale} />
         </div>
       </div>
     </section>

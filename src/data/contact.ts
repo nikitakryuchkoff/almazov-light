@@ -1,26 +1,29 @@
-export const contactInfo = {
-  email: "info@almazov-light.uz",
-  phone: "+998712000000",
-  phoneDisplay: "+998 (71) 200 00 00",
-  telegram: "https://t.me/almazov_light",
-  whatsapp: "https://wa.me/998712000000",
-  instagram: "https://instagram.com/almazov_light",
+import { CONTACT_INFO_STATIC } from "@/constants/contact-info";
+import { CONTACT_PUBLIC_ENV_KEYS } from "@/constants/contact-form";
+import type { ContactInfo } from "@/types/contact";
+import {
+  getRequiredEnv,
+  getRequiredNormalizedUrlEnv,
+  getRequiredNumericEnv,
+} from "@/utils/env";
+
+export const contactInfo: ContactInfo = {
+  email: getRequiredEnv(CONTACT_PUBLIC_ENV_KEYS.email),
+  phone: getRequiredEnv(CONTACT_PUBLIC_ENV_KEYS.phone),
+  phoneDisplay: getRequiredEnv(CONTACT_PUBLIC_ENV_KEYS.phoneDisplay),
+  telegram: getRequiredNormalizedUrlEnv(CONTACT_PUBLIC_ENV_KEYS.telegram),
+  whatsapp: getRequiredNormalizedUrlEnv(CONTACT_PUBLIC_ENV_KEYS.whatsapp),
+  instagram: getRequiredNormalizedUrlEnv(CONTACT_PUBLIC_ENV_KEYS.instagram),
   // Approximate coordinates for the Aviasozlar area, Yashnabad district, Tashkent.
   // The Yandex Map widget itself resolves the pin via mapQuery, so this only
   // backs the LocalBusiness JSON-LD; verify and refine if exact coords are needed.
-  geo: { lat: 41.272, lng: 69.296 },
-  city: { en: "Tashkent", ru: "Ташкент", uz: "Toshkent" },
-  country: "UZ",
-  hours: {
-    en: "Mon — Sat · 10 — 19",
-    ru: "Пн — Сб · 10 — 19",
-    uz: "Du — Sha · 10 — 19",
+  geo: {
+    lat: getRequiredNumericEnv(CONTACT_PUBLIC_ENV_KEYS.geoLat),
+    lng: getRequiredNumericEnv(CONTACT_PUBLIC_ENV_KEYS.geoLng),
   },
-  address: {
-    en: "2nd Aviasozlar passage, 8/2, Tashkent, Uzbekistan",
-    ru: "2-й проезд Авиасозлар, 8/2, Ташкент, Узбекистан",
-    uz: "2-Aviasozlar oʻtkazgichi, 8/2, Toshkent, Oʻzbekiston",
-  },
-  // Russian works best for Yandex search inside Uzbekistan
-  mapQuery: "Узбекистан, Ташкент, 2-й проезд Авиасозлар, 8/2",
+  city: CONTACT_INFO_STATIC.city,
+  country: CONTACT_INFO_STATIC.country,
+  hours: CONTACT_INFO_STATIC.hours,
+  address: CONTACT_INFO_STATIC.address,
+  mapQuery: getRequiredEnv(CONTACT_PUBLIC_ENV_KEYS.mapQuery),
 };

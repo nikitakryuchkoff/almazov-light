@@ -129,12 +129,16 @@
 }
 
 .next {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
   margin-top: 80px;
   padding: 48px 0;
   border-top: 1px solid var(--line);
+}
+
+.nextContent {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .nextLabel {
@@ -147,9 +151,33 @@
 }
 
 .nextTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   font-size: 32px;
   font-weight: 300;
   letter-spacing: -0.02em;
+  line-height: 1.05;
+  transition: color 0.24s ease;
+}
+
+.nextTitleText {
+  min-width: 0;
+  text-wrap: balance;
+}
+
+.nextArrow {
+  flex: 0 0 auto;
+  transition: transform 0.24s ease;
+}
+
+.nextTitle:hover {
+  color: var(--amber);
+}
+
+.nextTitle:hover .nextArrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 960px) {
@@ -174,8 +202,7 @@
   }
 
   .next {
-    gap: 24px;
-    align-items: flex-start;
+    padding: 40px 0;
   }
 }
 
@@ -219,14 +246,23 @@
   }
 
   .next {
-    flex-direction: column;
-    gap: 18px;
     margin-top: 48px;
-    padding: 32px 0;
+    padding: 28px 0 24px;
+  }
+
+  .nextLabel {
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
   }
 
   .nextTitle {
-    font-size: 26px;
+    font-size: clamp(24px, 7vw, 26px);
+    line-height: 1.08;
+  }
+
+  .nextArrow {
+    width: 26px;
   }
 }
 
@@ -260,5 +296,9 @@
 
   .nextTitle {
     font-size: 22px;
+  }
+
+  .nextArrow {
+    width: 24px;
   }
 }

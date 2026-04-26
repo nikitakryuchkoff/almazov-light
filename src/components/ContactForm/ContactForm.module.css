@@ -69,7 +69,7 @@
 }
 
 .submitRow {
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  grid-template-columns: 1fr;
   align-items: stretch;
   padding: 0;
 }
@@ -80,6 +80,13 @@
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+.controlStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
 }
 
 .row :is(input, textarea, select) {
@@ -94,8 +101,59 @@
   font-weight: 300;
 }
 
+.fieldInput {
+  overflow: hidden;
+  box-shadow: inset 0 -1px 0 transparent;
+  transition:
+    box-shadow 0.24s ease,
+    background-color 0.24s ease;
+}
+
+.fieldInput:focus {
+  box-shadow: inset 0 -1px 0 var(--amber);
+}
+
+.inputError {
+  box-shadow: inset 0 -1px 0 #cb5f5f;
+}
+
+.fieldError {
+  color: #cb5f5f;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 .row :is(input, textarea)::placeholder {
   color: var(--ink-mute);
+}
+
+.row :is(input, textarea):-webkit-autofill,
+.row :is(input, textarea):-webkit-autofill:hover,
+.row :is(input, textarea):-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 1000px var(--bg) inset;
+  box-shadow: 0 0 0 1000px var(--bg) inset;
+  caret-color: var(--ink);
+}
+
+.inputError:-webkit-autofill,
+.inputError:-webkit-autofill:hover,
+.inputError:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow:
+    0 0 0 1000px var(--bg) inset,
+    inset 0 -1px 0 #cb5f5f;
+  box-shadow:
+    0 0 0 1000px var(--bg) inset,
+    inset 0 -1px 0 #cb5f5f;
+  caret-color: var(--ink);
+}
+
+.row :is(input, textarea, select):disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
 }
 
 .row select {
@@ -107,81 +165,65 @@
   background: var(--bg);
 }
 
-.channels {
-  display: flex;
-  min-width: 0;
-  border-right: 1px solid var(--line);
-}
-
-.channel {
-  flex: 1 1 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 18px 22px;
-  border: none;
-  border-right: 1px solid var(--line);
-  color: var(--ink-dim);
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  background: transparent;
-  cursor: pointer;
-  transition:
-    color 0.3s,
-    background 0.3s;
-}
-
-.channel:last-child {
-  border-right: none;
-}
-
-.channel:hover {
-  color: var(--ink);
-  background: var(--bg-1);
-}
-
-.channelDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
-.telegram .channelDot {
-  background: var(--blue);
-  box-shadow: 0 0 10px var(--blue);
-}
-
-.whatsapp .channelDot {
-  background: #3dd68c;
-  box-shadow: 0 0 10px #3dd68c;
-}
-
 .submitButton {
   display: flex;
   width: 100%;
   min-width: 0;
   min-height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
   padding: 18px 28px;
   border: none;
-  color: #0a0a0a;
+  color: #fff;
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  background: var(--amber);
+  background: transparent;
   cursor: pointer;
-  transition: background 0.3s;
+  transition:
+    color 0.24s ease,
+    background 0.24s ease;
+}
+
+.submitButton svg {
+  transition: transform 0.24s ease;
 }
 
 .submitButton:hover {
-  background: #ffd98a;
+  background: transparent;
+  color: var(--amber);
+}
+
+.submitButton:hover svg {
+  transform: translateX(4px);
+}
+
+.submitButton:disabled {
+  background: transparent;
+  cursor: wait;
+}
+
+.errorStrip {
+  padding: 16px 24px 18px;
+  color: #f1cdc5;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #3a1917;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 @media (max-width: 960px) {
@@ -192,11 +234,6 @@
 
   .submitRow {
     grid-template-columns: 1fr;
-  }
-
-  .channels {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
   }
 
   .submitButton {
@@ -216,24 +253,10 @@
     padding: 22px 18px 24px;
   }
 
+  .errorStrip,
   .row,
   .rowTextarea {
     padding: 18px;
-  }
-
-  .channels {
-    flex-direction: column;
-  }
-
-  .channel {
-    justify-content: flex-start;
-    padding: 16px 18px;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .channel:last-child {
-    border-bottom: none;
   }
 
   .submitButton {
@@ -245,7 +268,6 @@
 @media (max-width: 530px) {
   .eyebrow,
   .step,
-  .channel,
   .submitButton {
     letter-spacing: 0.12em;
   }

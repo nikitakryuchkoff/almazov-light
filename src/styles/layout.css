@@ -1,4 +1,18 @@
 @layer layout {
+  /* Width the fixed SideRail reserves on the right edge of the viewport
+     (its 28px offset + the longest label/line). Used to keep content from
+     scrolling under the rail on desktop. Only applied above 960px because
+     the SideRail is hidden on mobile. */
+  :root {
+    --rail-reserve: 0px;
+  }
+
+  @media (min-width: 961px) {
+    :root {
+      --rail-reserve: 80px;
+    }
+  }
+
   main {
     position: relative;
     z-index: 2;
@@ -16,6 +30,7 @@
   .container {
     margin: 0 auto;
     max-width: 1440px;
+    padding-right: var(--rail-reserve);
   }
 
   @media (max-width: 960px) {

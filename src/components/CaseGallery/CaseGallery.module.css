@@ -134,6 +134,10 @@
   display: none;
 }
 
+.thumbsCompact {
+  overflow-x: hidden;
+}
+
 .thumb {
   position: relative;
   min-width: 118px;
@@ -251,17 +255,27 @@
 
   .controls {
     right: 12px;
-    left: 12px;
+    left: auto;
     bottom: 12px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(72px, auto));
   }
 
   .thumbs {
     grid-auto-columns: 92px;
   }
 
+  .thumbsCompact {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(var(--thumb-count), minmax(0, 1fr));
+  }
+
   .thumb {
     min-width: 92px;
+  }
+
+  .thumbsCompact .thumb {
+    min-width: 0;
   }
 }
 
@@ -275,13 +289,13 @@
   }
 
   .arrow {
-    height: 40px;
-    gap: 8px;
-    padding: 0 10px;
-    font-size: 8px;
+    height: 36px;
+    gap: 6px;
+    padding: 0 8px;
+    font-size: 7px;
   }
 
   .arrow svg {
-    width: 14px;
+    width: 12px;
   }
 }

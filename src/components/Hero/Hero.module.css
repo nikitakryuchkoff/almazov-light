@@ -1,6 +1,9 @@
 .root {
   min-height: 100vh;
-  padding: 0 40px;
+  /* The right padding includes --rail-reserve (set in layout.css) so the
+     hero content (title, CTA, ticker) never slides under the fixed SideRail
+     on desktop. The variable is 0 below 960px so mobile is unaffected. */
+  padding: 0 calc(40px + var(--rail-reserve, 0px)) 0 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

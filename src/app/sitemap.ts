@@ -2,9 +2,10 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/config";
 import { cases } from "@/data/portfolio";
 import { processSteps } from "@/data/processSteps";
+import { getSiteUrl } from "@/utils/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://almazov-light.uz";
+  const baseUrl = getSiteUrl();
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
 

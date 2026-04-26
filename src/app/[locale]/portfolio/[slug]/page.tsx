@@ -9,6 +9,7 @@ import CursorLight from "@/components/CursorLight";
 import RevealObserver from "@/components/RevealObserver";
 import Footer from "@/components/Footer";
 import CaseGallery from "@/components/CaseGallery";
+import { getAbsoluteSiteUrl, getSiteUrl } from "@/utils/site";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
@@ -47,7 +48,7 @@ export async function generateMetadata({
       title,
       description,
       type: "article",
-      url: `https://almazov-light.uz/${localeParam}/portfolio/${slug}`,
+      url: getAbsoluteSiteUrl(`/${localeParam}/portfolio/${slug}`),
       images: item.gallery.map((image) => ({ url: image.src })),
     },
   };
@@ -69,14 +70,14 @@ export default async function CasePage({
   const currentIndex = cases.findIndex((entry) => entry.slug === item.slug);
   const nextCase = cases[(currentIndex + 1) % cases.length];
 
-  const baseUrl = "https://almazov-light.uz";
+  const baseUrl = getSiteUrl();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: item.title[locale],
     description: item.shortDescription[locale],
-    url: `${baseUrl}/${locale}/portfolio/${item.slug}`,
-    image: item.gallery.map((image) => `${baseUrl}${image.src}`),
+    url: getAbsoluteSiteUrl(`/${locale}/portfolio/${item.slug}`),
+    image: item.gallery.map((image) => getAbsoluteSiteUrl(image.src)),
     locationCreated: {
       "@type": "Place",
       name: item.location[locale],
@@ -183,13 +184,22 @@ export default async function CasePage({
           </section>
 
           <Link href={`/${locale}/portfolio/${nextCase.slug}`} className={styles.next} data-hover>
-            <div>
+            <div className={styles.nextContent}>
               <div className={styles.nextLabel}>{dict.caseDetail.nextCase}</div>
-              <div className={styles.nextTitle}>{nextCase.title[locale]}</div>
+              <div className={styles.nextTitle}>
+                <span className={styles.nextTitleText}>{nextCase.title[locale]}</span>
+                <svg
+                  className={styles.nextArrow}
+                  width="32"
+                  viewBox="0 0 14 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                >
+                  <path d="M1 5 H13 M9 1 L13 5 L9 9" />
+                </svg>
+              </div>
             </div>
-            <svg width="32" viewBox="0 0 14 10" fill="none" stroke="currentColor" strokeWidth="1.2">
-              <path d="M1 5 H13 M9 1 L13 5 L9 9" />
-            </svg>
           </Link>
         </div>
       </main>
