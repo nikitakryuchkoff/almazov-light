@@ -106,6 +106,8 @@
   transition:
     color 0.25s,
     background 0.25s;
+
+  cursor: pointer;
 }
 
 .arrow:last-child {
@@ -164,6 +166,7 @@
   border-top: 2px solid transparent;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 46%);
   transition: border-color 0.25s;
+  cursor: pointer;
 }
 
 .thumb:hover,

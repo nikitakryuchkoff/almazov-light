@@ -2,10 +2,12 @@ import Link from "next/link";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 import { contactInfo } from "@/data/contact";
+import { faqSectionCopy } from "@/data/faq";
 import styles from "./Footer.module.css";
 
 export default function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const home = `/${locale}`;
+  const faqLabel = faqSectionCopy[locale].navLabel;
 
   return (
     <footer className={styles.root}>
@@ -21,7 +23,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
               <Link href={`${home}#about`}>{dict.nav.about}</Link>
               <Link href={`${home}#process`}>{dict.nav.process}</Link>
               <Link href={`${home}#cases`}>{dict.nav.cases}</Link>
-              <Link href={`${home}#services`}>{dict.nav.services}</Link>
+              <Link href={`${home}#services`}>{faqLabel}</Link>
             </div>
           </div>
           <div className={styles.column}>

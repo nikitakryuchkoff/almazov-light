@@ -171,7 +171,6 @@ export const cases: CaseStudy[] = [
     image: "/cases/grand-hotel-irkutsk-premium.png",
     imagePosition: "50% 34%",
     gallery: [
-      { src: "/cases/grand-hotel-irkutsk/04-night-corner.webp", position: "50% 34%" },
       { src: "/cases/grand-hotel-irkutsk/01-night-panorama.webp", position: "50% 48%" },
       { src: "/cases/grand-hotel-irkutsk/02-facade-detail.webp", position: "50% 38%" },
       { src: "/cases/grand-hotel-irkutsk/03-tower.webp", position: "50% 42%" },

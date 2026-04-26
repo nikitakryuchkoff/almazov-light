@@ -1,0 +1,265 @@
+.list {
+  position: relative;
+  padding-left: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.list::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.item {
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.5s ease;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: 56px;
+  left: -28px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: all 0.4s ease;
+}
+
+.item:hover {
+  background: linear-gradient(
+    90deg,
+    oklch(70% 0.16 245 / 0.04),
+    transparent 60%
+  );
+}
+
+.item:hover::before,
+.item[open]::before {
+  transform: scale(1.4);
+  border-color: var(--amber);
+  background: var(--amber);
+  box-shadow:
+    0 0 16px var(--amber),
+    0 0 40px oklch(70% 0.16 245 / 0.5);
+}
+
+.item[open] {
+  background: linear-gradient(
+    90deg,
+    oklch(70% 0.16 245 / 0.06),
+    transparent 70%
+  );
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 40px;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 24px 32px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.index {
+  color: var(--ink-mute);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.item:hover .index,
+.item[open] .index {
+  color: var(--amber);
+}
+
+.question {
+  max-width: 32ch;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.item:hover .question,
+.item[open] .question {
+  color: var(--amber);
+}
+
+.toggle {
+  position: relative;
+  justify-self: end;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  color: var(--ink-mute);
+  transition:
+    border-color 0.35s ease,
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.4s ease;
+}
+
+.item:hover .toggle,
+.item[open] .toggle {
+  border-color: var(--amber);
+  background: oklch(70% 0.16 245 / 0.12);
+  color: var(--amber);
+}
+
+.item[open] .toggle {
+  transform: rotate(180deg);
+}
+
+.toggle::before,
+.toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 1px;
+  background: currentColor;
+  transition: transform 0.35s ease;
+}
+
+.toggle::before {
+  transform: translate(-50%, -50%);
+}
+
+.toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.item[open] .toggle::after {
+  transform: translate(-50%, -50%) rotate(0deg) scale(0);
+}
+
+.answerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.item[open] .answerWrap {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 40px;
+  gap: 40px;
+  overflow: hidden;
+  padding: 0 24px 36px 16px;
+}
+
+.answer {
+  grid-column: 2;
+  max-width: 60ch;
+  color: var(--ink-dim);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+@media (max-width: 960px) {
+  .summary {
+    grid-template-columns: 96px minmax(0, 1fr) 36px;
+    gap: 24px;
+    padding: 28px 20px 28px 12px;
+  }
+
+  .answerInner {
+    grid-template-columns: 96px minmax(0, 1fr) 36px;
+    gap: 24px;
+    padding: 0 20px 28px 12px;
+  }
+
+  .item::before {
+    top: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .list {
+    padding-left: 18px;
+  }
+
+  .list::before {
+    top: 16px;
+    bottom: 16px;
+  }
+
+  .item::before {
+    top: 32px;
+    left: -22px;
+    width: 7px;
+    height: 7px;
+  }
+
+  .summary {
+    grid-template-columns: minmax(0, 1fr) 36px;
+    gap: 16px;
+    padding: 24px 0 24px 8px;
+  }
+
+  .index {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+
+  .question {
+    grid-column: 1;
+    max-width: none;
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .answerInner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 0 24px 8px;
+  }
+
+  .answer {
+    grid-column: auto;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 530px) {
+  .list {
+    padding-left: 14px;
+  }
+
+  .item::before {
+    left: -18px;
+  }
+
+  .summary {
+    padding: 20px 0 20px 8px;
+  }
+}

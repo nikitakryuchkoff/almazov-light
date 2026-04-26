@@ -23,25 +23,25 @@ export const en = {
     viewPortfolio: "View Cases",
   },
   about: {
-    sectionNum: "[ 01 · HOW AlmazovLight WORKS ]",
-    title: "Professional design, installation",
-    titleEm: "decoration",
-    titleEnd: "of lighting systems.",
+    sectionNum: "[ 01 · ABOUT ]",
+    title: "Modern lighting solutions",
+    titleEm: "for every space",
+    titleEnd: ".",
     cards: [
       {
-        idx: "01 / CONCEPT DEVELOPMENT",
-        h: "We elevate light to an art form.",
-        p: "Quality lighting begins with thoughtful planning. We create photorealistic 3D concepts so you can evaluate brightness, uniformity and accent zones before a single fixture is installed.",
+        idx: "01 / INTERIOR LIGHT DESIGN",
+        h: "Fixtures that fit the space.",
+        p: "We select and place luminaires for homes, offices and retail — every decision keyed to the room's purpose, the budget and the atmosphere you want to live in.",
       },
       {
-        idx: "02 / TECHNICAL ANALYSIS",
-        h: "Precise illumination calculation.",
-        p: "Engineering analysis to QMQ 2.01.05-2019 and EN 12464-1 standards. Horizontal and vertical illuminance, uniformity and UGR verified to the last metre.",
+        idx: "02 / TECHNICAL & SMART CONTROL",
+        h: "Engineering and control systems.",
+        p: "Illuminance, energy efficiency and code compliance verified up front. Lighting control systems for comfort, scenes and long-term savings.",
       },
       {
-        idx: "03 / INSTALLATION & SERVICE",
-        h: "Installed to the highest standard.",
-        p: "Our team executes the system to the letter of the design. Warranty and regular maintenance keep everything running flawlessly.",
+        idx: "03 / ARCHITECTURAL LIGHTING",
+        h: "Façades, landscapes, public spaces.",
+        p: "Architectural illumination for façades, landscapes and public areas — the building becomes a new nighttime landmark without losing its character.",
       },
     ],
   },
@@ -50,6 +50,7 @@ export const en = {
     titleStart: "From",
     titleEm: "brief to dusk",
     titleEnd: "— six stages.",
+    readMore: "Open stage",
     steps: [
       {
         num: "STEP / 01",
@@ -103,7 +104,7 @@ export const en = {
     enquire: "ENQUIRE",
   },
   contact: {
-    sectionNum: "[ 05 · CONTACT ]",
+    sectionNum: "[ 06 · CONTACT ]",
     titleStart: "Let’s discuss",
     titleEm: "your project",
     titleEnd: ".",
@@ -116,6 +117,7 @@ export const en = {
     hoursValue: "Mon — Sat · 10 — 19",
     email: "Email",
     direct: "Direct",
+    address: "Address",
     formIntro: "New enquiry",
     formStep: "STEP 1 / 2 — CONTACT",
     formName: "Name",
@@ -161,6 +163,19 @@ export const en = {
     nextImage: "Next",
     related: "Other cases",
     nextCase: "Next case",
+  },
+  sponsors: {
+    sectionNum: "[ 04 · TRUSTED BY ]",
+    titleStart: "Brands we",
+    titleEm: "build with",
+    titleEnd: ".",
+  },
+  processDetail: {
+    backToProcess: "Back to process",
+    summary: "Summary",
+    allSteps: "All stages",
+    nextStep: "Next stage",
+    overview: "Overview",
   },
   meta: {
     title: "AlmazovLight — Professional Lighting Design in Tashkent",

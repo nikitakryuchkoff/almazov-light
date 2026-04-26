@@ -25,25 +25,25 @@ export const uz: Dictionary = {
     viewPortfolio: "Loyihalarni koʻrish",
   },
   about: {
-    sectionNum: "[ 01 · AlmazovLight QANDAY ISHLAYDI ]",
-    title: "Yoritish tizimlarini professional loyihalash, oʻrnatish",
-    titleEm: "bezash",
-    titleEnd: "xizmatlari.",
+    sectionNum: "[ 01 · BIZ HAQIMIZDA ]",
+    title: "Har qanday makon uchun",
+    titleEm: "zamonaviy yoritish yechimlari",
+    titleEnd: ".",
     cards: [
       {
-        idx: "01 / KONSEPSIYA ISHLAB CHIQISH",
-        h: "Yorugʻlikni sanʼat darajasiga koʻtaramiz.",
-        p: "Sifatli yoritish chuqur rejalashtirish bilan boshlanadi. Fotorealistik 3D-konsepsiyalar yaratamiz — yorqinlik, bir tekislik va aksent zonalarini chiroq oʻrnatishdan oldin baholay olasiz.",
+        idx: "01 / INTERYER YORITISH DIZAYNI",
+        h: "Makonga mos chiroqlar.",
+        p: "Uy, ofis va retail uchun chiroqlarni tanlash va joylashtirish. Har bir yechim xona vazifasi, byudjet va kerakli kayfiyatga moslashtiriladi.",
       },
       {
-        idx: "02 / YORUGʻLIK-TEXNIK TAHLIL",
-        h: "Aniq yoritish hisob-kitoblari.",
-        p: "QMQ 2.01.05-2019 va EN 12464-1 standartlariga muvofiq muhandislik tahlili. Gorizontal va vertikal yoritilganlik, bir xillik hamda UGR — soʻnggi metrgacha tekshirilgan.",
+        idx: "02 / HISOB-KITOB VA AQLLI BOSHQARUV",
+        h: "Muhandislik va boshqaruv tizimlari.",
+        p: "Yoritilganlik, energiya samaradorligi va meʼyorlarga muvofiqlik oldindan tekshiriladi. Qulaylik, sahnalar va tejamkorlik uchun yoritishni boshqaruv tizimlari.",
       },
       {
-        idx: "03 / OʻRNATISH VA XIZMAT",
-        h: "Eng yuqori standartda oʻrnatilgan.",
-        p: "Jamoamiz tizimni loyiha boʻyicha aniq amalga oshiradi. Kafolat va muntazam texnik xizmat tizimning benuqson ishlashini taʼminlaydi.",
+        idx: "03 / ARXITEKTURA YORITISH",
+        h: "Fasadlar, landshaftlar, jamoat joylari.",
+        p: "Fasadlar, landshaftlar va jamoat joylarining arxitektura yoritilishi — bino oʻz xarakterini yoʻqotmagan holda yangi tungi belgiga aylanadi.",
       },
     ],
   },
@@ -52,6 +52,7 @@ export const uz: Dictionary = {
     titleStart: "Briefdan",
     titleEm: "kechki yorugʻlikkacha",
     titleEnd: " — olti bosqich.",
+    readMore: "Bosqichni ochish",
     steps: [
       {
         num: "BOSQICH / 01",
@@ -105,7 +106,7 @@ export const uz: Dictionary = {
     enquire: "SOʻROV",
   },
   contact: {
-    sectionNum: "[ 05 · KONTAKTLAR ]",
+    sectionNum: "[ 06 · KONTAKTLAR ]",
     titleStart: "Sizning",
     titleEm: "loyihangizni",
     titleEnd: " muhokama qilamiz.",
@@ -118,6 +119,7 @@ export const uz: Dictionary = {
     hoursValue: "Du — Sha · 10 — 19",
     email: "Email",
     direct: "Toʻgʻridan-toʻgʻri",
+    address: "Manzil",
     formIntro: "Yangi soʻrov",
     formStep: "QADAM 1 / 2 — KONTAKT",
     formName: "Ism",
@@ -163,6 +165,19 @@ export const uz: Dictionary = {
     nextImage: "Keyingi",
     related: "Boshqa loyihalar",
     nextCase: "Keyingi loyiha",
+  },
+  sponsors: {
+    sectionNum: "[ 04 · HAMKORLAR ]",
+    titleStart: "Biz birga",
+    titleEm: "ishlaydigan brendlar",
+    titleEnd: ".",
+  },
+  processDetail: {
+    backToProcess: "Jarayonga qaytish",
+    summary: "Qisqacha",
+    allSteps: "Barcha bosqichlar",
+    nextStep: "Keyingi bosqich",
+    overview: "Tavsif",
   },
   meta: {
     title: "AlmazovLight — Toshkentdagi professional yoritish dizayni",

@@ -9,9 +9,8 @@ const yandexHost: Record<Locale, string> = {
 };
 
 export default function YandexMap({ locale }: { locale: Locale }) {
-  const { lat, lng } = contactInfo.geo;
-  const ll = `${lng},${lat}`;
-  const src = `${yandexHost[locale]}?ll=${ll}&z=15&pt=${ll},pm2rdm&mode=search`;
+  const query = encodeURIComponent(contactInfo.mapQuery);
+  const src = `${yandexHost[locale]}?text=${query}&z=17&mode=search`;
 
   return (
     <iframe
@@ -22,7 +21,7 @@ export default function YandexMap({ locale }: { locale: Locale }) {
       frameBorder={0}
       loading="lazy"
       allowFullScreen
-      title={`AlmazovLight studio location — ${contactInfo.city[locale]}`}
+      title={`AlmazovLight studio location — ${contactInfo.address[locale]}`}
     />
   );
 }

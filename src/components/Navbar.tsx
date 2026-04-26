@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import type { Locale } from "@/i18n/config";
 import { localeShort } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
+import { faqSectionCopy } from "@/data/faq";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({
@@ -34,6 +35,7 @@ export default function Navbar({
   }, []);
 
   const home = `/${locale}`;
+  const faqLabel = faqSectionCopy[locale].navLabel;
 
   return (
     <nav className={styles.root} ref={navRef} aria-label="Main navigation">
@@ -66,7 +68,7 @@ export default function Navbar({
           {dict.nav.cases}
         </Link>
         <Link href={`${home}#services`} className={styles.link}>
-          {dict.nav.services}
+          {faqLabel}
         </Link>
         <Link href={`${home}#contact`} className={styles.link}>
           {dict.nav.contact}

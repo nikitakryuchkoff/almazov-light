@@ -8,8 +8,9 @@ const sections = [
   { id: "about", label: "01" },
   { id: "process", label: "02" },
   { id: "cases", label: "03" },
-  { id: "services", label: "04" },
-  { id: "contact", label: "05" },
+  { id: "sponsors", label: "04" },
+  { id: "services", label: "05" },
+  { id: "contact", label: "06" },
 ];
 
 export default function SideRail() {

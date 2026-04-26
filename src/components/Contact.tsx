@@ -47,6 +47,10 @@ export default function Contact({ dict, locale }: { dict: Dictionary; locale: Lo
                   <a href={`tel:${contactInfo.phone}`}>{contactInfo.phoneDisplay}</a>
                 </div>
               </div>
+              <div>
+                <div className={styles.key}>{dict.contact.address}</div>
+                <div className={styles.value}>{contactInfo.address[locale]}</div>
+              </div>
             </div>
             <div className={styles.map}>
               <YandexMap locale={locale} />

@@ -1,0 +1,169 @@
+.section {
+  padding: 96px 0;
+}
+
+.section :global(.container) {
+  padding: 0 40px;
+}
+
+.marquee {
+  position: relative;
+  margin-top: 64px;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg) 10%, transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg) 10%, transparent);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 3 copies of the set are concatenated; one full cycle scrolls past
+     exactly one copy (-33.333%), then snaps back invisibly because the
+     remaining 2 copies fill the viewport identically. */
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  /* margin-right (vs grid gap) carries the spacing INSIDE each item so the
+     three duplicated copies of the track tile seamlessly at -33.333% translateX. */
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 170px;
+  margin-right: 18px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #f1f0eb;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.item:hover {
+  border-color: var(--amber);
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 0 0 1px var(--amber),
+    0 0 24px oklch(70% 0.16 245 / 0.35);
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(0.55);
+  opacity: 0.9;
+  transition:
+    filter 0.5s ease,
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  user-select: none;
+}
+
+.item:hover .logo {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .section :global(.container) {
+    padding: 0 24px;
+  }
+
+  .marquee {
+    margin-top: 40px;
+    padding: 12px 0;
+  }
+
+  .track {
+    animation-duration: 32s;
+  }
+
+  .item {
+    width: 180px;
+    height: 140px;
+    margin-right: 14px;
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .fadeLeft,
+  .fadeRight {
+    width: 80px;
+  }
+}
+
+@media (max-width: 530px) {
+  .track {
+    animation-duration: 26s;
+  }
+
+  .item {
+    width: 152px;
+    height: 120px;
+    margin-right: 12px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+}

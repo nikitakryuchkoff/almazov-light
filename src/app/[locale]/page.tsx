@@ -9,7 +9,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Process from "@/components/Process";
 import Cases from "@/components/Cases";
-import Services from "@/components/Services";
+import Sponsors from "@/components/Sponsors";
+import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { contactInfo } from "@/data/contact";
@@ -70,9 +71,10 @@ export default async function Home({
       <main>
         <Hero locale={locale} dict={dict} />
         <About dict={dict} />
-        <Process dict={dict} />
+        <Process dict={dict} locale={locale} />
         <Cases locale={locale} dict={dict} />
-        <Services dict={dict} locale={locale} />
+        <Sponsors locale={locale} dict={dict} />
+        <Faq locale={locale} />
         <Contact dict={dict} locale={locale} />
       </main>
 
