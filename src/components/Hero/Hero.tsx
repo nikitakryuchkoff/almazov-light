@@ -5,13 +5,7 @@ import CtaLink from "@/components/ui/CtaLink";
 import type { Locale } from "@/i18n/config";
 import styles from "./Hero.module.css";
 
-export default function Hero({
-  locale,
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+export default function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const beams = [
     [styles.beam, styles.beam1].join(" "),
     [styles.beam, styles.beam2, styles.cool].join(" "),

@@ -17,11 +17,7 @@ import { contactInfo } from "@/data/contact";
 import { services } from "@/data/services";
 import { faqItems } from "@/data/faq";
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);

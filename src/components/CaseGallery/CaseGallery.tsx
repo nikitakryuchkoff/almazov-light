@@ -56,13 +56,23 @@ export default function CaseGallery({
 
         {total > 1 ? (
           <div className={styles.controls}>
-            <button type="button" className={styles.arrow} onClick={goToPrevious} aria-label={previousLabel}>
+            <button
+              type="button"
+              className={styles.arrow}
+              onClick={goToPrevious}
+              aria-label={previousLabel}
+            >
               <span>{previousLabel}</span>
               <svg viewBox="0 0 18 12" fill="none" stroke="currentColor" strokeWidth="1.3">
                 <path d="M17 6H1M6 1 1 6l5 5" />
               </svg>
             </button>
-            <button type="button" className={styles.arrow} onClick={goToNext} aria-label={nextLabel}>
+            <button
+              type="button"
+              className={styles.arrow}
+              onClick={goToNext}
+              aria-label={nextLabel}
+            >
               <span>{nextLabel}</span>
               <svg viewBox="0 0 18 12" fill="none" stroke="currentColor" strokeWidth="1.3">
                 <path d="M1 6h16M12 1l5 5-5 5" />
@@ -78,7 +88,9 @@ export default function CaseGallery({
             <button
               key={image.src}
               type="button"
-              className={[styles.thumb, activeIndex === index ? styles.active : ""].filter(Boolean).join(" ")}
+              className={[styles.thumb, activeIndex === index ? styles.active : ""]
+                .filter(Boolean)
+                .join(" ")}
               onClick={() => setActiveIndex(index)}
               aria-label={`${label} ${index + 1}`}
               aria-current={activeIndex === index ? "true" : undefined}

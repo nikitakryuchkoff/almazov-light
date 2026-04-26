@@ -10,13 +10,7 @@ import type { Dictionary } from "@/i18n";
 import { faqSectionCopy } from "@/data/faq";
 import styles from "./Navbar.module.css";
 
-export default function Navbar({
-  locale,
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+export default function Navbar({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const navRef = useRef<HTMLElement>(null);
   const lastY = useRef(0);
   const pathname = usePathname();
@@ -92,13 +86,9 @@ export default function Navbar({
 
   return (
     <nav className={styles.root} ref={navRef} aria-label="Main navigation">
-      <Link
-        className={styles.brand}
-        href={`${home}#top`}
-        aria-label="AlmazovLight"
-      >
+      <Link className={styles.brand} href={`${home}#top`} aria-label="AlmazovLight">
         <Image
-          src="/brand/almazov-light-logo.svg"
+          src="/brand/almazov-light-logo.png"
           alt="Almazov Light"
           width={560}
           height={140}
@@ -120,10 +110,7 @@ export default function Navbar({
               key={l}
               href={getLocaleHref(l)}
               hrefLang={l}
-              className={[
-                styles.langLink,
-                l === locale ? styles.langLinkActive : "",
-              ]
+              className={[styles.langLink, l === locale ? styles.langLinkActive : ""]
                 .filter(Boolean)
                 .join(" ")}
               aria-current={l === locale ? "page" : undefined}

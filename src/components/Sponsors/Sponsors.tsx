@@ -4,12 +4,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { sponsors } from "@/data/sponsors";
 import styles from "./Sponsors.module.css";
 
-export default function Sponsors({
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+export default function Sponsors({ dict }: { locale: Locale; dict: Dictionary }) {
   // Triple the list so the marquee always has enough content to fill the
   // viewport across the wrap point — animation translates by -33.333%.
   const track = [...sponsors, ...sponsors, ...sponsors];

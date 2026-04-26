@@ -50,7 +50,9 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
           </div>
         </div>
         <div className={styles.bottom}>
-          <span>© {new Date().getFullYear()} AlmazovLight · {dict.footer.rights}</span>
+          <span>
+            © {new Date().getFullYear()} AlmazovLight · {dict.footer.rights}
+          </span>
           <span>{dict.footer.inspiring}</span>
         </div>
       </div>

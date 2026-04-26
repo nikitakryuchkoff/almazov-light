@@ -14,7 +14,10 @@ export default function ProcessTimeline({ children }: { children: ReactNode }) {
       const rect = timeline.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const total = rect.height;
-      const progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (total + viewportHeight)));
+      const progress = Math.max(
+        0,
+        Math.min(1, (viewportHeight - rect.top) / (total + viewportHeight)),
+      );
       timeline.style.setProperty("--progress", `${progress * 100}%`);
     };
 

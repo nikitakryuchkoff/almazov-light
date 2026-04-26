@@ -15,7 +15,7 @@ export default function Clock() {
           String(d.getMinutes()).padStart(2, "0") +
           ":" +
           String(d.getSeconds()).padStart(2, "0") +
-          " LOC"
+          " LOC",
       );
     };
     tick();

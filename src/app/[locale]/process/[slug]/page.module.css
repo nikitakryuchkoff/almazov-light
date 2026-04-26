@@ -136,7 +136,9 @@
   height: 8px;
   border-radius: 50%;
   background: var(--amber);
-  box-shadow: 0 0 12px var(--amber), 0 0 28px oklch(70% 0.16 245 / 0.4);
+  box-shadow:
+    0 0 12px var(--amber),
+    0 0 28px oklch(70% 0.16 245 / 0.4);
 }
 
 .steps {
@@ -273,7 +275,9 @@
   background: var(--bg);
   color: var(--ink-dim);
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
   height: 100%;
 }
 

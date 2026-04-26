@@ -39,7 +39,13 @@ export default function About({ dict }: { dict: Dictionary }) {
             </div>
             <div className={styles.visual}>
               <div className={styles.engineering}>
-                <svg viewBox="0 0 400 160" fill="none" stroke="oklch(70% 0.16 245)" strokeWidth="0.5" opacity="0.9">
+                <svg
+                  viewBox="0 0 400 160"
+                  fill="none"
+                  stroke="oklch(70% 0.16 245)"
+                  strokeWidth="0.5"
+                  opacity="0.9"
+                >
                   <circle cx="80" cy="80" r="6" fill="oklch(70% 0.16 245)" />
                   <circle cx="200" cy="40" r="6" fill="oklch(70% 0.16 245)" />
                   <circle cx="320" cy="100" r="6" fill="oklch(70% 0.16 245)" />
@@ -74,7 +80,14 @@ export default function About({ dict }: { dict: Dictionary }) {
                       <stop offset="1" stopColor="oklch(70% 0.16 245)" stopOpacity="0" />
                     </linearGradient>
                   </defs>
-                  <rect x="40" y="30" width="320" height="110" fill="#141416" stroke="rgba(255,255,255,0.1)" />
+                  <rect
+                    x="40"
+                    y="30"
+                    width="320"
+                    height="110"
+                    fill="#141416"
+                    stroke="rgba(255,255,255,0.1)"
+                  />
                   <rect x="40" y="30" width="320" height="8" fill="#0a0a0a" />
                   {[70, 120, 170, 220, 270, 320].map((x, i) => (
                     <rect

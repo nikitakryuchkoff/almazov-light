@@ -17,7 +17,7 @@
 .item {
   position: relative;
   border-bottom: 1px solid var(--line);
-  transition: background 0.5s ease;
+  transition: background 0.22s ease;
 }
 
 .item::before {
@@ -30,15 +30,15 @@
   border: 1px solid var(--line-2);
   border-radius: 50%;
   background: var(--bg);
-  transition: all 0.4s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .item:hover {
-  background: linear-gradient(
-    90deg,
-    oklch(70% 0.16 245 / 0.04),
-    transparent 60%
-  );
+  background: linear-gradient(90deg, oklch(70% 0.16 245 / 0.04), transparent 60%);
 }
 
 .item:hover::before,
@@ -52,11 +52,7 @@
 }
 
 .item[open] {
-  background: linear-gradient(
-    90deg,
-    oklch(70% 0.16 245 / 0.06),
-    transparent 70%
-  );
+  background: linear-gradient(90deg, oklch(70% 0.16 245 / 0.06), transparent 70%);
 }
 
 .summary {
@@ -95,7 +91,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .item:hover .index,
@@ -109,7 +105,7 @@
   font-weight: 300;
   letter-spacing: -0.015em;
   line-height: 1.2;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .item:hover .question,
@@ -126,10 +122,10 @@
   border-radius: 999px;
   color: var(--ink-mute);
   transition:
-    border-color 0.35s ease,
-    background-color 0.35s ease,
-    color 0.35s ease,
-    transform 0.4s ease;
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .item:hover .toggle,
@@ -170,7 +166,7 @@
 .answerWrap {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s ease;
+  transition: grid-template-rows 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .item[open] .answerWrap {
@@ -183,6 +179,16 @@
   gap: 40px;
   overflow: hidden;
   padding: 0 24px 36px 16px;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.16s ease,
+    transform 0.22s ease;
+}
+
+.item[open] .answerInner {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .answer {

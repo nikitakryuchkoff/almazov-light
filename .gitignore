@@ -1,3 +1,17 @@
 /node_modules
 /.next
+/out
+/build
 /.history
+/.playwright-mcp
+/test-results
+/.playwright-mcp-report.txt
+/mobile-*.png
+/.next-start*.log
+/.next-start*.err.log
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+.env*
+!.env.example

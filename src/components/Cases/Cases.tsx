@@ -7,13 +7,7 @@ import type { Locale } from "@/i18n/config";
 import { cases } from "@/data/portfolio";
 import styles from "./Cases.module.css";
 
-export default function Cases({
-  locale,
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+export default function Cases({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <section id="cases">
       <div className="container">
@@ -30,19 +24,13 @@ export default function Cases({
         <div className={styles.grid} data-reveal>
           {cases.map((item) => {
             const sizeClass =
-              item.size === "wide"
-                ? styles.wide
-                : item.size === "tall"
-                  ? styles.tall
-                  : "";
+              item.size === "wide" ? styles.wide : item.size === "tall" ? styles.tall : "";
 
             return (
               <Link
                 key={item.slug}
                 href={`/${locale}/portfolio/${item.slug}`}
-                className={[styles.project, sizeClass]
-                  .filter(Boolean)
-                  .join(" ")}
+                className={[styles.project, sizeClass].filter(Boolean).join(" ")}
                 data-hover
                 aria-label={`${dict.cases.viewCase}: ${item.title[locale]}`}
               >
@@ -58,9 +46,7 @@ export default function Cases({
                 <div className={styles.overlay} />
                 <div className={styles.meta}>
                   <div>
-                    <div className={styles.category}>
-                      {item.categoryLabel[locale]}
-                    </div>
+                    <div className={styles.category}>{item.categoryLabel[locale]}</div>
                     <h3 className={styles.title}>{item.title[locale]}</h3>
                   </div>
                   <div className={styles.location}>
@@ -73,9 +59,7 @@ export default function Cases({
         </div>
 
         <div className={styles.ctaRow} data-reveal>
-          <CtaLink href={`/${locale}#cases`}>
-            {dict.cases.fullPortfolio}
-          </CtaLink>
+          <CtaLink href={`/${locale}#cases`}>{dict.cases.fullPortfolio}</CtaLink>
         </div>
       </div>
     </section>

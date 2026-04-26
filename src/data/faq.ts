@@ -77,8 +77,7 @@ export const faqItems: Record<Locale, FaqItem[]> = {
         "Стоимость зависит от объёма проекта и задач. Мы всегда предварительно обсуждаем ваш запрос и готовим понятную смету. Простая консультация — бесплатно.",
     },
     {
-      question:
-        "Вы можете просто подсказать, какие светильники купить для моего интерьера?",
+      question: "Вы можете просто подсказать, какие светильники купить для моего интерьера?",
       answer:
         "Да, можем провести консультацию и помочь с выбором светильников, даже если вы не заказываете полный проект.",
     },
@@ -98,8 +97,7 @@ export const faqItems: Record<Locale, FaqItem[]> = {
         "Да, у нас есть проверенные партнёры по монтажу. Мы можем сопровождать проект полностью: концепция, подбор оборудования, поставка и монтаж.",
     },
     {
-      question:
-        "Вы подбираете конкретные светильники или только делаете план?",
+      question: "Вы подбираете конкретные светильники или только делаете план?",
       answer:
         "Мы делаем и полноценную концепцию света, и подбор конкретных светильников по вашему бюджету и задачам.",
     },
@@ -127,14 +125,12 @@ export const faqItems: Record<Locale, FaqItem[]> = {
         "Albatta. Amalga oshirilgan loyihalar misollarini sayt orqali ham, shaxsiy uchrashuvda ham ko'rsatamiz.",
     },
     {
-      question:
-        "Loyihadan tortib montajgacha bo'lgan turnkey yoritishni buyurtma qilish mumkinmi?",
+      question: "Loyihadan tortib montajgacha bo'lgan turnkey yoritishni buyurtma qilish mumkinmi?",
       answer:
         "Ha, bizda montaj bo'yicha ishonchli hamkorlar bor. Loyiha bo'yicha to'liq hamrohlik qila olamiz: konsepsiya, uskunani tanlash, yetkazib berish va montaj.",
     },
     {
-      question:
-        "Siz aniq chiroqlarni ham tanlaysizmi yoki faqat reja tayyorlaysizmi?",
+      question: "Siz aniq chiroqlarni ham tanlaysizmi yoki faqat reja tayyorlaysizmi?",
       answer:
         "Biz ham to'liq yorug'lik konsepsiyasini, ham budjet va vazifalaringizga mos aniq chiroqlar tanlovini tayyorlaymiz.",
     },

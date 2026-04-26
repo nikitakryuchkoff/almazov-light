@@ -13,7 +13,7 @@ export default function RevealObserver() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));

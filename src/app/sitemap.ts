@@ -15,9 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: locale === "en" ? 1 : 0.9,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}`])
-        ),
+        languages: Object.fromEntries(locales.map((l) => [l, `${baseUrl}/${l}`])),
       },
     });
   }
@@ -31,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
         alternates: {
           languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/portfolio/${c.slug}`])
+            locales.map((l) => [l, `${baseUrl}/${l}/portfolio/${c.slug}`]),
           ),
         },
       });
@@ -47,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
         alternates: {
           languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/process/${step.slug}`])
+            locales.map((l) => [l, `${baseUrl}/${l}/process/${step.slug}`]),
           ),
         },
       });

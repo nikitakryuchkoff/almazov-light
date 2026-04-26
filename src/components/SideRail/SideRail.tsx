@@ -89,7 +89,9 @@ export default function SideRail() {
             event.preventDefault();
             setActiveSection(section.id);
             window.history.pushState(null, "", `#${section.id}`);
-            document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            document
+              .getElementById(section.id)
+              ?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         >
           <span>{section.label}</span>

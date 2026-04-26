@@ -3,11 +3,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { faqItems, faqSectionCopy } from "@/data/faq";
 import styles from "./Faq.module.css";
 
-export default function Faq({
-  locale,
-}: {
-  locale: Locale;
-}) {
+export default function Faq({ locale }: { locale: Locale }) {
   const copy = faqSectionCopy[locale];
 
   return (
@@ -25,16 +21,9 @@ export default function Faq({
 
         <div className={styles.list} data-reveal>
           {faqItems[locale].map((item, index) => (
-            <details
-              key={item.question}
-              className={styles.item}
-              data-hover
-              open={index === 0}
-            >
+            <details key={item.question} className={styles.item} data-hover open={index === 0}>
               <summary className={styles.summary}>
-                <span className={styles.index}>
-                  Q / {String(index + 1).padStart(2, "0")}
-                </span>
+                <span className={styles.index}>Q / {String(index + 1).padStart(2, "0")}</span>
                 <span className={styles.question}>{item.question}</span>
                 <span className={styles.toggle} aria-hidden="true" />
               </summary>
