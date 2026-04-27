@@ -1,5 +1,6 @@
 .page {
-  padding: 140px 40px 80px;
+  --case-page-inline: 40px;
+  padding: 140px var(--case-page-inline) 80px;
 }
 
 .backLink {
@@ -182,7 +183,8 @@
 
 @media (max-width: 960px) {
   .page {
-    padding: 100px 24px 60px;
+    --case-page-inline: 24px;
+    padding: 100px var(--case-page-inline) 60px;
   }
 
   .hero {
@@ -208,7 +210,8 @@
 
 @media (max-width: 640px) {
   .page {
-    padding: 88px 18px 48px;
+    --case-page-inline: 18px;
+    padding: 88px var(--case-page-inline) 48px;
   }
 
   .backLink {
@@ -268,7 +271,8 @@
 
 @media (max-width: 530px) {
   .page {
-    padding: 84px 16px 40px;
+    --case-page-inline: 16px;
+    padding: 84px var(--case-page-inline) 40px;
   }
 
   .backLink {

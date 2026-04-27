@@ -1,7 +1,9 @@
-export const en = {
+import { applyTypographyToLocaleTree } from "@/utils/typography";
+
+const enDictionary = {
   nav: {
     about: "About",
-    process: "Process",
+    process: "Services",
     services: "Services",
     cases: "Cases",
     contact: "Contact",
@@ -30,26 +32,26 @@ export const en = {
     cards: [
       {
         idx: "01 / INTERIOR LIGHT DESIGN",
-        h: "Fixtures that fit the space.",
+        h: "Fixtures that fit the space",
         p: "We select and place luminaires for homes, offices and retail — every decision keyed to the room's purpose, the budget and the atmosphere you want to live in.",
       },
       {
         idx: "02 / TECHNICAL & SMART CONTROL",
-        h: "Engineering and control systems.",
+        h: "Engineering and control systems",
         p: "Illuminance, energy efficiency and code compliance verified up front. Lighting control systems for comfort, scenes and long-term savings.",
       },
       {
         idx: "03 / ARCHITECTURAL LIGHTING",
-        h: "Façades, landscapes, public spaces.",
+        h: "Façades, landscapes, public spaces",
         p: "Architectural illumination for façades, landscapes and public areas — the building becomes a new nighttime landmark without losing its character.",
       },
     ],
   },
   process: {
-    sectionNum: "[ 02 · HOW WE WORK ]",
-    titleStart: "From",
-    titleEm: "brief to dusk",
-    titleEnd: "— six stages.",
+    sectionNum: "[ 02 · OUR SERVICES ]",
+    titleStart: "Our",
+    titleEm: "services",
+    titleEnd: ".",
     readMore: "Open stage",
     steps: [
       {
@@ -87,7 +89,7 @@ export const en = {
   cases: {
     sectionNum: "[ 03 · OUR CASES ]",
     titleStart: "Hotels, residences, retail",
-    titleEm: "art spaces",
+    titleEm: "and art spaces",
     titleEnd: ".",
     filters: {
       all: "All cases",
@@ -142,8 +144,8 @@ export const en = {
     navigate: "Navigate",
     connect: "Connect",
     office: "Office",
-    inspiring: "Inspiring Light.",
-    rights: "All rights reserved.",
+    inspiring: "Inspiring Light",
+    rights: "All rights reserved",
   },
   caseDetail: {
     backToCases: "Back to all cases",
@@ -179,5 +181,7 @@ export const en = {
     ogTitle: "AlmazovLight — Inspiring Light",
   },
 };
+
+export const en = applyTypographyToLocaleTree(enDictionary, "en");
 
 export type Dictionary = typeof en;

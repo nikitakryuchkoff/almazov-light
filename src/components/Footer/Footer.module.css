@@ -68,10 +68,6 @@
   text-transform: none;
 }
 
-.metaText {
-  color: var(--ink-mute);
-}
-
 .bottom {
   display: flex;
   flex-wrap: wrap;

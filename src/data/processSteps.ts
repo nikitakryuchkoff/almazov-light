@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/config";
+import { applyTypographyToLocalizedTree } from "@/utils/typography";
 
 type LocalizedText = Record<Locale, string>;
 
@@ -26,7 +27,7 @@ export interface ProcessStepDetail {
   blocks: ProcessBlock[];
 }
 
-const STEPS: ProcessStepDetail[] = [
+const RAW_STEPS: ProcessStepDetail[] = [
   {
     slug: "concept-development",
     num: "01",
@@ -652,6 +653,8 @@ const STEPS: ProcessStepDetail[] = [
     ],
   },
 ];
+
+const STEPS: ProcessStepDetail[] = applyTypographyToLocalizedTree(RAW_STEPS);
 
 export const processSteps = STEPS;
 

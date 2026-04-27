@@ -9,27 +9,36 @@ const sections = [
   { id: "process", label: "02" },
   { id: "cases", label: "03" },
   { id: "sponsors", label: "04" },
-  { id: "services", label: "05" },
+  { id: "faq", label: "05" },
   { id: "contact", label: "06" },
 ];
 
 export default function SideRail() {
   const [activeSection, setActiveSection] = useState("top");
 
+  const getScrollOffset = () => {
+    const raw = window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue("--section-scroll-offset");
+    const offset = Number.parseFloat(raw);
+    return Number.isFinite(offset) ? offset : 88;
+  };
+
+  const scrollToSection = (id: string, behavior: ScrollBehavior = "smooth") => {
+    if (id === "top") {
+      window.scrollTo({ top: 0, behavior });
+      return;
+    }
+
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const offset = getScrollOffset();
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: Math.max(0, top), behavior });
+  };
+
   useEffect(() => {
-    const scrollToSection = (id: string, behavior: ScrollBehavior = "smooth") => {
-      const element = document.getElementById(id);
-      if (!element) return;
-      element.scrollIntoView({ behavior, block: "start" });
-    };
-
-    const getScrollOffset = () => {
-      if (window.innerWidth <= 530) return 72;
-      if (window.innerWidth <= 640) return 76;
-      if (window.innerWidth <= 960) return 84;
-      return 96;
-    };
-
     const updateActiveSection = () => {
       const threshold = getScrollOffset() + 8;
       let currentId = sections[0]?.id ?? "top";
@@ -89,9 +98,7 @@ export default function SideRail() {
             event.preventDefault();
             setActiveSection(section.id);
             window.history.pushState(null, "", `#${section.id}`);
-            document
-              .getElementById(section.id)
-              ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            scrollToSection(section.id, "smooth");
           }}
         >
           <span>{section.label}</span>

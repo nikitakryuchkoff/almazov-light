@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/config";
+import { applyTypographyToLocalizedTree } from "@/utils/typography";
 
 type LocalizedText = Record<Locale, string>;
 
@@ -10,7 +11,7 @@ export interface Service {
   description: LocalizedText;
 }
 
-export const services: Service[] = [
+const rawServices: Service[] = [
   {
     slug: "concept-development",
     idx: "01 / 06",
@@ -126,3 +127,5 @@ export const services: Service[] = [
     },
   },
 ];
+
+export const services: Service[] = applyTypographyToLocalizedTree(rawServices);

@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/config";
+import { applyTypographyToLocalizedTree } from "@/utils/typography";
 
 type FaqItem = {
   question: string;
@@ -13,7 +14,7 @@ type FaqSectionCopy = {
   titleEnd: string;
 };
 
-export const faqSectionCopy: Record<Locale, FaqSectionCopy> = {
+const rawFaqSectionCopy: Record<Locale, FaqSectionCopy> = {
   en: {
     navLabel: "FAQ",
     sectionNum: "[ 05 · FAQ ]",
@@ -37,7 +38,9 @@ export const faqSectionCopy: Record<Locale, FaqSectionCopy> = {
   },
 };
 
-export const faqItems: Record<Locale, FaqItem[]> = {
+export const faqSectionCopy = applyTypographyToLocalizedTree(rawFaqSectionCopy);
+
+const rawFaqItems: Record<Locale, FaqItem[]> = {
   en: [
     {
       question: "How much does a lighting design project cost?",
@@ -136,3 +139,5 @@ export const faqItems: Record<Locale, FaqItem[]> = {
     },
   ],
 };
+
+export const faqItems = applyTypographyToLocalizedTree(rawFaqItems);

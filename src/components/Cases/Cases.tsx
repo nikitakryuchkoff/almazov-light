@@ -15,8 +15,11 @@ export default function Cases({ locale, dict }: { locale: Locale; dict: Dictiona
           number={dict.cases.sectionNum}
           title={
             <>
-              {dict.cases.titleStart} &amp; <em>{dict.cases.titleEm}</em>
-              {dict.cases.titleEnd}
+              {dict.cases.titleStart}
+              <em className={styles.headerAccent}>
+                {dict.cases.titleEm}
+                {dict.cases.titleEnd}
+              </em>
             </>
           }
         />
@@ -43,7 +46,6 @@ export default function Cases({ locale, dict }: { locale: Locale; dict: Dictiona
                     className={styles.backgroundMedia}
                   />
                 </div>
-                <div className={styles.overlay} />
                 <div className={styles.meta}>
                   <div>
                     <div className={styles.category}>{item.categoryLabel[locale]}</div>

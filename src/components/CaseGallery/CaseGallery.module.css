@@ -1,4 +1,5 @@
 .root {
+  margin-inline: calc(-1 * var(--case-page-inline, 0px));
   margin-bottom: 88px;
 }
 
@@ -16,7 +17,10 @@
 }
 
 .header span:last-child {
-  color: var(--amber);
+  padding: 8px 10px;
+  border: 1px solid var(--line-2);
+  color: var(--ink);
+  background: rgb(5 5 5 / 0.42);
 }
 
 .frame {
@@ -140,15 +144,16 @@
 
 .thumb {
   position: relative;
+  isolation: isolate;
   min-width: 118px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 0;
-  opacity: 0.48;
   background: #050505;
   transition:
-    opacity 0.25s,
-    filter 0.25s;
+    filter 0.25s,
+    box-shadow 0.25s ease;
+  filter: saturate(0.72) brightness(0.72);
 }
 
 .thumb::after {
@@ -156,20 +161,19 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  border-top: 2px solid transparent;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 46%);
-  transition: border-color 0.25s;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.12) 48%, transparent);
+  transition: background 0.25s;
   cursor: pointer;
 }
 
 .thumb:hover,
 .active {
-  opacity: 1;
-  filter: saturate(1.08) contrast(1.04);
+  filter: none;
+  box-shadow: inset 0 0 0 2px rgb(245 244 240 / 0.92);
 }
 
 .active::after {
-  border-color: var(--amber);
+  background: linear-gradient(180deg, rgb(245 244 240 / 0.08), transparent 52%);
 }
 
 .thumbIndex {
@@ -177,18 +181,20 @@
   top: 10px;
   left: 10px;
   z-index: 3;
-  color: var(--ink);
+  color: rgb(245 244 240 / 0.76);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 9px;
   letter-spacing: 0.16em;
+  text-shadow: 0 1px 10px rgb(0 0 0 / 0.42);
 }
 
 .active .thumbIndex {
-  color: var(--amber);
+  color: var(--ink);
 }
 
 .thumbImage {
   object-fit: cover;
+  transform: translateZ(0);
 }
 
 @keyframes revealImage {
@@ -244,6 +250,16 @@
   .thumb {
     min-width: 104px;
   }
+
+  .thumbsCompact {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(var(--thumb-count), minmax(0, 1fr));
+  }
+
+  .thumbsCompact .thumb {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 640px) {
@@ -264,18 +280,8 @@
     grid-auto-columns: 92px;
   }
 
-  .thumbsCompact {
-    grid-auto-flow: row;
-    grid-auto-columns: auto;
-    grid-template-columns: repeat(var(--thumb-count), minmax(0, 1fr));
-  }
-
   .thumb {
     min-width: 92px;
-  }
-
-  .thumbsCompact .thumb {
-    min-width: 0;
   }
 }
 

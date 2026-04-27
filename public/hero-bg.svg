@@ -6,38 +6,38 @@
       <stop offset="100%" stop-color="#000"/>
     </radialGradient>
     <radialGradient id="warmBokeh">
-      <stop offset="0" stop-color="oklch(78% 0.14 245)" stop-opacity="0.55"/>
-      <stop offset="35%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
+      <stop offset="0" stop-color="#7993D8" stop-opacity="0.55"/>
+      <stop offset="35%" stop-color="#2953C1" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#2953C1" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="warmCore">
-      <stop offset="0" stop-color="#eaf3ff" stop-opacity="0.95"/>
-      <stop offset="20%" stop-color="oklch(85% 0.10 235)" stop-opacity="0.7"/>
-      <stop offset="60%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ADBDE7" stop-opacity="0.95"/>
+      <stop offset="20%" stop-color="#ADBDE7" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#2953C1" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2953C1" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="coolBokeh">
-      <stop offset="0" stop-color="oklch(85% 0.08 215)" stop-opacity="0.4"/>
-      <stop offset="40%" stop-color="oklch(85% 0.08 215)" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="oklch(85% 0.08 215)" stop-opacity="0"/>
+      <stop offset="0" stop-color="#4267C8" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#4267C8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#4267C8" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="atmosphereTop" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0" stop-color="#000" stop-opacity="0.55"/>
       <stop offset="40%" stop-color="#000" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="atmosphereBottom" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
-      <stop offset="60%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.18"/>
+      <stop offset="0" stop-color="#2953C1" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#2953C1" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2953C1" stop-opacity="0.18"/>
     </linearGradient>
     <linearGradient id="hazeWash" x1="0" x2="1" y1="1" y2="0">
-      <stop offset="0" stop-color="oklch(70% 0.16 245)" stop-opacity="0.12"/>
-      <stop offset="50%" stop-color="oklch(70% 0.16 245)" stop-opacity="0.04"/>
+      <stop offset="0" stop-color="#2953C1" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#2953C1" stop-opacity="0.04"/>
       <stop offset="100%" stop-color="transparent"/>
     </linearGradient>
     <radialGradient id="floorPool" cx="50%" cy="100%" r="60%">
-      <stop offset="0" stop-color="oklch(70% 0.16 245)" stop-opacity="0.32"/>
-      <stop offset="100%" stop-color="oklch(70% 0.16 245)" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2953C1" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#2953C1" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -67,7 +67,7 @@
   </g>
 
   <!-- City windows -->
-  <g fill="oklch(78% 0.14 245)">
+  <g fill="#7993D8">
     <rect x="40"   y="820" width="2" height="3" opacity="0.7"/>
     <rect x="55"   y="850" width="2" height="3" opacity="0.55"/>
     <rect x="75"   y="880" width="2" height="3" opacity="0.6"/>
@@ -164,19 +164,19 @@
   <!-- Bright pinpoint lights with halos (suspended fixtures feel) -->
   <g>
     <circle cx="430"  cy="390" r="50" fill="url(#warmCore)"/>
-    <circle cx="430"  cy="390" r="2.5" fill="#fff5e0"/>
+    <circle cx="430"  cy="390" r="2.5" fill="#2953C1"/>
     <circle cx="700"  cy="280" r="42" fill="url(#warmCore)"/>
-    <circle cx="700"  cy="280" r="2"   fill="#fff5e0"/>
+    <circle cx="700"  cy="280" r="2"   fill="#2953C1"/>
     <circle cx="970"  cy="430" r="55" fill="url(#warmCore)"/>
-    <circle cx="970"  cy="430" r="2.5" fill="#fff5e0"/>
+    <circle cx="970"  cy="430" r="2.5" fill="#2953C1"/>
     <circle cx="1240" cy="320" r="45" fill="url(#warmCore)"/>
-    <circle cx="1240" cy="320" r="2"   fill="#fff5e0"/>
+    <circle cx="1240" cy="320" r="2"   fill="#2953C1"/>
     <circle cx="1500" cy="540" r="50" fill="url(#warmCore)"/>
-    <circle cx="1500" cy="540" r="2.5" fill="#fff5e0"/>
+    <circle cx="1500" cy="540" r="2.5" fill="#2953C1"/>
     <circle cx="1820" cy="380" r="40" fill="url(#warmCore)"/>
-    <circle cx="1820" cy="380" r="2"   fill="#fff5e0"/>
+    <circle cx="1820" cy="380" r="2"   fill="#2953C1"/>
     <circle cx="270"  cy="510" r="45" fill="url(#warmCore)"/>
-    <circle cx="270"  cy="510" r="2"   fill="#fff5e0"/>
+    <circle cx="270"  cy="510" r="2"   fill="#2953C1"/>
   </g>
 
   <!-- Suspended pendant cables (subtle) -->

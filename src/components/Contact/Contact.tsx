@@ -14,8 +14,11 @@ export default function Contact({ dict, locale }: { dict: Dictionary; locale: Lo
           number={dict.contact.sectionNum}
           title={
             <>
-              {dict.contact.titleStart} <em>{dict.contact.titleEm}</em>
-              {dict.contact.titleEnd}
+              {dict.contact.titleStart}{" "}
+              <em>
+                {dict.contact.titleEm}
+                {dict.contact.titleEnd}
+              </em>
             </>
           }
         />
@@ -23,8 +26,11 @@ export default function Contact({ dict, locale }: { dict: Dictionary; locale: Lo
         <div className={styles.grid}>
           <div data-reveal>
             <p className={styles.statement}>
-              {dict.contact.statementStart} <em>{dict.contact.statementEm}</em>
-              {dict.contact.statementEnd}
+              {dict.contact.statementStart}{" "}
+              <em>
+                {dict.contact.statementEm}
+                {dict.contact.statementEnd}
+              </em>
             </p>
             <div className={styles.meta}>
               <div>

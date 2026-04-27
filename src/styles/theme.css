@@ -8,9 +8,13 @@
     --ink-mute: rgba(245, 244, 240, 0.32);
     --line: rgba(245, 244, 240, 0.1);
     --line-2: rgba(245, 244, 240, 0.18);
-    --amber: oklch(70% 0.16 245);
-    --amber-soft: oklch(70% 0.16 245 / 0.25);
-    --blue: oklch(85% 0.08 215);
-    --blue-soft: oklch(85% 0.08 215 / 0.22);
+    --brand: #2953c1;
+    --brand-rgb: 41 83 193;
+    --brand-light: #4267c8;
+    --brand-light-rgb: 66 103 200;
+    --amber: var(--brand);
+    --amber-soft: rgb(var(--brand-rgb) / 0.25);
+    --blue: var(--brand-light);
+    --blue-soft: rgb(var(--brand-light-rgb) / 0.22);
   }
 }

@@ -9,8 +9,8 @@
   transform: translate(-50%, -50%);
   background: radial-gradient(
     circle at center,
-    oklch(70% 0.16 245 / 0.18) 0%,
-    oklch(70% 0.16 245 / 0.08) 25%,
+    rgb(var(--brand-rgb) / 0.18) 0%,
+    rgb(var(--brand-rgb) / 0.08) 25%,
     transparent 55%
   );
   mix-blend-mode: screen;
@@ -30,7 +30,7 @@
   background: var(--amber);
   box-shadow:
     0 0 16px var(--amber),
-    0 0 48px oklch(70% 0.16 245 / 0.6);
+    0 0 48px rgb(var(--brand-rgb) / 0.6);
   transition: transform 0.12s ease;
 }
 

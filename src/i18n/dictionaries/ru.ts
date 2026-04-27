@@ -1,9 +1,11 @@
+import { applyTypographyToLocaleTree } from "@/utils/typography";
+
 import type { Dictionary } from "./en";
 
-export const ru: Dictionary = {
+const ruDictionary = {
   nav: {
     about: "О нас",
-    process: "Процесс",
+    process: "Услуги",
     services: "Услуги",
     cases: "Кейсы",
     contact: "Контакты",
@@ -32,26 +34,26 @@ export const ru: Dictionary = {
     cards: [
       {
         idx: "01 / ИНТЕРЬЕРНЫЙ СВЕТДИЗАЙН",
-        h: "Светильники под характер пространства.",
+        h: "Свет под задачу",
         p: "Подбор и расстановка светильников для дома, офиса и ретейла. Каждое решение отвечает назначению комнаты, бюджету и нужному настроению.",
       },
       {
         idx: "02 / РАСЧЁТ И УМНОЕ УПРАВЛЕНИЕ",
-        h: "Инженерия и системы управления.",
+        h: "Инженерия и системы управления",
         p: "Освещённость, энергоэффективность и соответствие нормам — выверены заранее. Системы управления светом для комфорта, сценариев и экономии.",
       },
       {
         idx: "03 / АРХИТЕКТУРНОЕ ОСВЕЩЕНИЕ",
-        h: "Фасады, ландшафты, общественные зоны.",
+        h: "Фасады, ландшафты, общественные зоны",
         p: "Архитектурная подсветка фасадов, ландшафтов и общественных зон — здание становится новым ночным ориентиром, не теряя характера.",
       },
     ],
   },
   process: {
-    sectionNum: "[ 02 · КАК МЫ РАБОТАЕМ ]",
-    titleStart: "От",
-    titleEm: "брифа до сумерек",
-    titleEnd: "— шесть этапов.",
+    sectionNum: "[ 02 · НАШИ УСЛУГИ ]",
+    titleStart: "Наши",
+    titleEm: "услуги",
+    titleEnd: ".",
     readMore: "Открыть этап",
     steps: [
       {
@@ -89,7 +91,7 @@ export const ru: Dictionary = {
   cases: {
     sectionNum: "[ 03 · НАШИ КЕЙСЫ ]",
     titleStart: "Отели, резиденции, ритейл",
-    titleEm: "арт-пространства",
+    titleEm: "и арт-пространства",
     titleEnd: ".",
     filters: {
       all: "Все кейсы",
@@ -134,7 +136,8 @@ export const ru: Dictionary = {
     invalidEmailError: "Введите корректный email.",
     sendBrief: "Отправить заявку",
     sendingBrief: "Отправка...",
-    sendError: "Не удалось отправить заявку. Попробуйте ещё раз или напишите нам в Telegram / WhatsApp.",
+    sendError:
+      "Не удалось отправить заявку. Попробуйте ещё раз или напишите нам в Telegram / WhatsApp.",
     sentMessage: "Сообщение отправлено — мы свяжемся с вами в ближайшее время.",
   },
   footer: {
@@ -144,8 +147,8 @@ export const ru: Dictionary = {
     navigate: "Навигация",
     connect: "Связь",
     office: "Офис",
-    inspiring: "Свет, который вдохновляет.",
-    rights: "Все права защищены.",
+    inspiring: "Свет, который вдохновляет",
+    rights: "Все права защищены",
   },
   caseDetail: {
     backToCases: "Ко всем кейсам",
@@ -180,4 +183,6 @@ export const ru: Dictionary = {
       "Профессиональное проектирование, монтаж и дизайн освещения для домов, офисов, улиц и арт-пространств в Ташкенте, Узбекистан. Превращаем свет в искусство.",
     ogTitle: "AlmazovLight — Свет, который вдохновляет",
   },
-};
+} satisfies Dictionary;
+
+export const ru: Dictionary = applyTypographyToLocaleTree(ruDictionary, "ru");

@@ -1,3 +1,7 @@
+.headerAccent {
+  display: block;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -41,17 +45,6 @@
   background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, oklch(70% 0.16 245 / 0), oklch(70% 0.16 245 / 0));
-  transition: background 0.6s;
-}
-
-.project:hover .overlay {
-  background: radial-gradient(circle at 50% 40%, oklch(70% 0.16 245 / 0.18), transparent 60%);
-}
-
 .project:hover .backgroundMedia {
   transform: scale(1.04);
 }
@@ -70,11 +63,20 @@
 }
 
 .category {
-  color: var(--amber);
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgb(245 244 240 / 0.14);
+  border-radius: 999px;
+  background: rgb(10 10 10 / 0.44);
+  backdrop-filter: blur(10px);
+  color: var(--ink);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 10px;
   letter-spacing: 0.18em;
+  line-height: 1;
   text-transform: uppercase;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
 }
 
 .title {
@@ -129,7 +131,7 @@
 .project:hover .play {
   opacity: 1;
   border-color: var(--amber);
-  background: oklch(70% 0.16 245 / 0.2);
+  background: rgb(var(--brand-rgb) / 0.2);
 }
 
 .play svg {

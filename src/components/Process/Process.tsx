@@ -14,7 +14,11 @@ export default function Process({ dict, locale }: { dict: Dictionary; locale: Lo
           number={dict.process.sectionNum}
           title={
             <>
-              {dict.process.titleStart} <em>{dict.process.titleEm}</em> {dict.process.titleEnd}
+              {dict.process.titleStart}{" "}
+              <em>
+                {dict.process.titleEm}
+                {dict.process.titleEnd}
+              </em>
             </>
           }
         />
@@ -37,7 +41,6 @@ export default function Process({ dict, locale }: { dict: Dictionary; locale: Lo
                 </div>
                 <p className={styles.stepDescription}>{step.desc}</p>
                 <div className={styles.stepCta}>
-                  <span className={styles.stepCtaDot} aria-hidden />
                   <span className={styles.stepCtaLabel}>{dict.process.readMore}</span>
                   <svg
                     className={styles.stepArrow}

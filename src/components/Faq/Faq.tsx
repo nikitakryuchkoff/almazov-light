@@ -10,8 +10,6 @@ export default function Faq({ locale }: { locale: Locale }) {
   const copy = faqSectionCopy[locale];
   const items = faqItems[locale];
 
-  // Multi-open accordion. The first item is open on first paint to mirror the
-  // previous native <details open> behaviour.
   const [openSet, setOpenSet] = useState<ReadonlySet<number>>(() => new Set([0]));
 
   const toggle = (index: number) => {
@@ -24,14 +22,17 @@ export default function Faq({ locale }: { locale: Locale }) {
   };
 
   return (
-    <section id="services">
+    <section id="faq">
       <div className="container">
         <SectionHeader
           number={copy.sectionNum}
           title={
             <>
-              {copy.titleStart} <em>{copy.titleEm}</em>
-              {copy.titleEnd}
+              {copy.titleStart}{" "}
+              <em>
+                {copy.titleEm}
+                {copy.titleEnd}
+              </em>
             </>
           }
         />
@@ -45,23 +46,25 @@ export default function Faq({ locale }: { locale: Locale }) {
             return (
               <div
                 key={item.question}
+                id={buttonId}
                 className={[styles.item, open ? styles.open : ""].filter(Boolean).join(" ")}
                 data-hover
+                role="button"
+                tabIndex={0}
+                aria-expanded={open}
+                aria-controls={panelId}
+                onClick={() => toggle(index)}
+                onKeyDown={(event) => {
+                  if (event.key !== "Enter" && event.key !== " ") return;
+                  event.preventDefault();
+                  toggle(index);
+                }}
               >
-                <button
-                  id={buttonId}
-                  type="button"
-                  className={styles.summary}
-                  aria-expanded={open}
-                  aria-controls={panelId}
-                  onClick={() => toggle(index)}
-                >
-                  <span className={styles.index}>
-                    Q / {String(index + 1).padStart(2, "0")}
-                  </span>
+                <div className={styles.summary}>
+                  <span className={styles.index}>Q / {String(index + 1).padStart(2, "0")}</span>
                   <span className={styles.question}>{item.question}</span>
                   <span className={styles.toggle} aria-hidden="true" />
-                </button>
+                </div>
 
                 <div
                   id={panelId}

@@ -129,8 +129,9 @@ export default function CaseGallery({
                 src={image.src}
                 alt=""
                 fill
+                quality={88}
                 className={styles.thumbImage}
-                sizes="160px"
+                sizes="(max-width: 640px) 92px, (max-width: 960px) 104px, 160px"
                 style={{ objectPosition: image.position ?? "50% 50%" }}
               />
             </button>

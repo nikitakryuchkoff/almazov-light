@@ -71,7 +71,7 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
     { href: `${home}#about`, label: dict.nav.about },
     { href: `${home}#process`, label: dict.nav.process },
     { href: `${home}#cases`, label: dict.nav.cases },
-    { href: `${home}#services`, label: faqLabel },
+    { href: `${home}#faq`, label: faqLabel },
     { href: `${home}#contact`, label: dict.nav.contact },
   ];
 

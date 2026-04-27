@@ -3,16 +3,16 @@
   grid-template-columns: 180px 1fr;
   gap: 40px;
   align-items: baseline;
-  margin-bottom: 80px;
-  padding-bottom: 48px;
+  margin-bottom: 64px;
+  padding-bottom: 38px;
   border-bottom: 1px solid var(--line);
+  align-items: center;
 }
 
 .number {
   color: var(--ink-mute);
   font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -33,7 +33,7 @@
   .root {
     grid-template-columns: 1fr;
     gap: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     padding-bottom: 24px;
   }
 }
@@ -41,7 +41,7 @@
 @media (max-width: 640px) {
   .root {
     gap: 10px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     padding-bottom: 20px;
   }
 

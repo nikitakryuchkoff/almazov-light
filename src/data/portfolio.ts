@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/config";
+import { applyTypographyToLocalizedTree } from "@/utils/typography";
 
 export type CaseCategory = "facade" | "interior" | "commercial" | "residential";
 
@@ -28,7 +29,7 @@ export interface CaseStudy {
   outcome: LocalizedText;
 }
 
-export const cases: CaseStudy[] = [
+const rawCases: CaseStudy[] = [
   {
     slug: "private-house-tashkent",
     category: "facade",
@@ -225,6 +226,8 @@ export const cases: CaseStudy[] = [
     },
   },
 ];
+
+export const cases: CaseStudy[] = applyTypographyToLocalizedTree(rawCases);
 
 export function getCaseBySlug(slug: string): CaseStudy | undefined {
   return cases.find((item) => item.slug === slug);

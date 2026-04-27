@@ -5,6 +5,9 @@
      the SideRail is hidden on mobile. */
   :root {
     --rail-reserve: 0px;
+    --section-space-y: 96px;
+    --section-space-x: 40px;
+    --section-scroll-offset: 88px;
   }
 
   @media (min-width: 961px) {
@@ -19,12 +22,12 @@
   }
 
   section {
-    padding: 120px 0;
+    padding: var(--section-space-y) var(--section-space-x);
     position: relative;
   }
 
   section[id]:not(#top) {
-    scroll-margin-top: 96px;
+    scroll-margin-top: var(--section-scroll-offset);
   }
 
   .container {
@@ -34,32 +37,38 @@
   }
 
   @media (max-width: 960px) {
-    section {
-      padding: 80px 24px;
+    :root {
+      --section-space-y: 72px;
+      --section-space-x: 24px;
+      --section-scroll-offset: 80px;
     }
 
-    section[id]:not(#top) {
-      scroll-margin-top: 84px;
+    section {
+      padding: var(--section-space-y) var(--section-space-x);
     }
   }
 
   @media (max-width: 640px) {
-    section {
-      padding: 72px 18px;
+    :root {
+      --section-space-y: 64px;
+      --section-space-x: 18px;
+      --section-scroll-offset: 72px;
     }
 
-    section[id]:not(#top) {
-      scroll-margin-top: 76px;
+    section {
+      padding: var(--section-space-y) var(--section-space-x);
     }
   }
 
   @media (max-width: 530px) {
-    section {
-      padding: 64px 16px;
+    :root {
+      --section-space-y: 56px;
+      --section-space-x: 16px;
+      --section-scroll-offset: 68px;
     }
 
-    section[id]:not(#top) {
-      scroll-margin-top: 72px;
+    section {
+      padding: var(--section-space-y) var(--section-space-x);
     }
   }
 }

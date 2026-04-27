@@ -16,16 +16,17 @@ export default function Sponsors({ dict }: { locale: Locale; dict: Dictionary })
           number={dict.sponsors.sectionNum}
           title={
             <>
-              {dict.sponsors.titleStart} <em>{dict.sponsors.titleEm}</em>
-              {dict.sponsors.titleEnd}
+              {dict.sponsors.titleStart}{" "}
+              <em>
+                {dict.sponsors.titleEm}
+                {dict.sponsors.titleEnd}
+              </em>
             </>
           }
         />
       </div>
 
       <div className={styles.marquee} data-reveal>
-        <div className={styles.fadeLeft} aria-hidden />
-        <div className={styles.fadeRight} aria-hidden />
         <ul className={styles.track} aria-label="Partner logos">
           {track.map((sponsor, index) => (
             <li

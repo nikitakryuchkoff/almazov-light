@@ -1,9 +1,11 @@
+import { applyTypographyToLocaleTree } from "@/utils/typography";
+
 import type { Dictionary } from "./en";
 
-export const uz: Dictionary = {
+const uzDictionary = {
   nav: {
     about: "Biz haqimizda",
-    process: "Jarayon",
+    process: "Xizmatlar",
     services: "Xizmatlar",
     cases: "Loyihalar",
     contact: "Kontaktlar",
@@ -32,26 +34,26 @@ export const uz: Dictionary = {
     cards: [
       {
         idx: "01 / INTERYER YORITISH DIZAYNI",
-        h: "Makonga mos chiroqlar.",
+        h: "Makonga mos chiroqlar",
         p: "Uy, ofis va retail uchun chiroqlarni tanlash va joylashtirish. Har bir yechim xona vazifasi, byudjet va kerakli kayfiyatga moslashtiriladi.",
       },
       {
         idx: "02 / HISOB-KITOB VA AQLLI BOSHQARUV",
-        h: "Muhandislik va boshqaruv tizimlari.",
+        h: "Muhandislik va boshqaruv tizimlari",
         p: "Yoritilganlik, energiya samaradorligi va meʼyorlarga muvofiqlik oldindan tekshiriladi. Qulaylik, sahnalar va tejamkorlik uchun yoritishni boshqaruv tizimlari.",
       },
       {
         idx: "03 / ARXITEKTURA YORITISH",
-        h: "Fasadlar, landshaftlar, jamoat joylari.",
+        h: "Fasadlar, landshaftlar, jamoat joylari",
         p: "Fasadlar, landshaftlar va jamoat joylarining arxitektura yoritilishi — bino oʻz xarakterini yoʻqotmagan holda yangi tungi belgiga aylanadi.",
       },
     ],
   },
   process: {
-    sectionNum: "[ 02 · QANDAY ISHLAYMIZ ]",
-    titleStart: "Briefdan",
-    titleEm: "kechki yorugʻlikkacha",
-    titleEnd: " — olti bosqich.",
+    sectionNum: "[ 02 · BIZNING XIZMATLARIMIZ ]",
+    titleStart: "Bizning",
+    titleEm: "xizmatlarimiz",
+    titleEnd: ".",
     readMore: "Bosqichni ochish",
     steps: [
       {
@@ -89,7 +91,7 @@ export const uz: Dictionary = {
   cases: {
     sectionNum: "[ 03 · BIZNING LOYIHALAR ]",
     titleStart: "Mehmonxonalar, uylar, savdo",
-    titleEm: "sanʼat maydonlari",
+    titleEm: "va sanʼat maydonlari",
     titleEnd: ".",
     filters: {
       all: "Barcha loyihalar",
@@ -134,7 +136,8 @@ export const uz: Dictionary = {
     invalidEmailError: "To'g'ri email kiriting.",
     sendBrief: "So'rovni yuborish",
     sendingBrief: "Yuborilmoqda...",
-    sendError: "So‘rovni yuborib bo‘lmadi. Qayta urinib ko‘ring yoki Telegram / WhatsApp orqali yozing.",
+    sendError:
+      "So‘rovni yuborib bo‘lmadi. Qayta urinib ko‘ring yoki Telegram / WhatsApp orqali yozing.",
     sentMessage: "Xabar yuborildi — tez orada bogʻlanamiz.",
   },
   footer: {
@@ -144,8 +147,8 @@ export const uz: Dictionary = {
     navigate: "Navigatsiya",
     connect: "Aloqa",
     office: "Ofis",
-    inspiring: "Ilhom bag‘ishlovchi yorug‘lik.",
-    rights: "Barcha huquqlar himoyalangan.",
+    inspiring: "Ilhom bag‘ishlovchi yorug‘lik",
+    rights: "Barcha huquqlar himoyalangan",
   },
   caseDetail: {
     backToCases: "Barcha loyihalarga qaytish",
@@ -180,4 +183,6 @@ export const uz: Dictionary = {
       "Toshkent, Oʻzbekistondagi xonadonlar, idoralar, koʻchalar va sanʼat maydonlari uchun yoritish tizimlarini professional loyihalash, oʻrnatish va bezash. Yorugʻlikni sanʼat darajasiga olib chiqamiz.",
     ogTitle: "AlmazovLight — Ilhom bag‘ishlovchi yorug‘lik",
   },
-};
+} satisfies Dictionary;
+
+export const uz: Dictionary = applyTypographyToLocaleTree(uzDictionary, "uz");
