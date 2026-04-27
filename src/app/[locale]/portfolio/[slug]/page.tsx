@@ -155,15 +155,15 @@ export default async function CasePage({
           </div>
         </div>
 
-        <CaseGallery
-          images={item.gallery}
-          title={item.title[locale]}
-          label={dict.caseDetail.gallery}
-          previousLabel={dict.caseDetail.previousImage}
-          nextLabel={dict.caseDetail.nextImage}
-        />
-
         <div className="container">
+          <CaseGallery
+            images={item.gallery}
+            title={item.title[locale]}
+            label={dict.caseDetail.gallery}
+            previousLabel={dict.caseDetail.previousImage}
+            nextLabel={dict.caseDetail.nextImage}
+          />
+
           <section className={styles.blocks} data-reveal>
             <h2 className={styles.blocksTitle}>{dict.caseDetail.objective}</h2>
             <div className={styles.blockBody}>{item.objective[locale]}</div>
