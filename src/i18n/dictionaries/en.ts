@@ -121,7 +121,6 @@ const enDictionary = {
     direct: "Direct",
     address: "Address",
     formIntro: "New enquiry",
-    formStep: "STEP 1 / 2 — CONTACT",
     formName: "Name",
     formNamePh: "Your name",
     formEmail: "Email",
@@ -138,6 +137,7 @@ const enDictionary = {
     sentMessage: "Message sent — we will be in touch shortly.",
   },
   footer: {
+    privacyPolicy: "Privacy Policy",
     studio: "Studio",
     studioDesc:
       "AlmazovLight — professional design, installation, and decoration of lighting systems for homes, offices, streets, and art spaces. We elevate light to an art form.",
@@ -145,7 +145,50 @@ const enDictionary = {
     connect: "Connect",
     office: "Office",
     inspiring: "Inspiring Light",
-    rights: "All rights reserved",
+  },
+  privacy: {
+    backHome: "Back to home",
+    eyebrow: "Legal",
+    title: "Privacy Policy",
+    updated: "Last updated: April 29, 2026",
+    intro:
+      "This policy explains how AlmazovLight handles contact form data and communication details submitted through the website.",
+    metaDescription:
+      "Privacy Policy for AlmazovLight website enquiries, contact form data, email processing, and data retention.",
+    sections: [
+      {
+        title: "Data we collect",
+        paragraphs: [
+          "When you send an enquiry, we collect your name, email address, project topic, message, selected language, and technical anti-spam fields.",
+        ],
+      },
+      {
+        title: "How we use data",
+        paragraphs: [
+          "We use this information to respond to your enquiry, prepare project communication, prevent spam, and maintain website security.",
+        ],
+      },
+      {
+        title: "Email processing",
+        paragraphs: [
+          "Form submissions are delivered through Resend. Email content may be processed by Resend to provide transactional email delivery.",
+        ],
+      },
+      {
+        title: "Data sharing",
+        paragraphs: [
+          "We do not sell personal data. We may share it only with service providers needed to operate the website and process enquiries.",
+        ],
+      },
+      {
+        title: "Retention",
+        paragraphs: [
+          "We keep enquiry data only for as long as needed to handle communication, project records, and reasonable administrative requirements.",
+        ],
+      },
+    ],
+    contactTitle: "Privacy contact",
+    contactText: "For privacy questions, email us at",
   },
   caseDetail: {
     backToCases: "Back to all cases",

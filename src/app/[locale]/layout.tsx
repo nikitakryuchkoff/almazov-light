@@ -4,7 +4,7 @@ import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n";
 import { getAbsoluteSiteUrl } from "@/utils/site";
 
-const SITE_TITLE = "ALMAVZOV - ALMAZOV";
+const SITE_TITLE = "Almazov light";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

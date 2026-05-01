@@ -123,7 +123,6 @@ const uzDictionary = {
     direct: "Toʻgʻridan-toʻgʻri",
     address: "Manzil",
     formIntro: "Yangi soʻrov",
-    formStep: "QADAM 1 / 2 — KONTAKT",
     formName: "Ism",
     formNamePh: "Ismingiz",
     formEmail: "Email",
@@ -141,6 +140,7 @@ const uzDictionary = {
     sentMessage: "Xabar yuborildi — tez orada bogʻlanamiz.",
   },
   footer: {
+    privacyPolicy: "Maxfiylik siyosati",
     studio: "Studiya",
     studioDesc:
       "AlmazovLight — xonadonlar, idoralar, koʻchalar va sanʼat maydonlari uchun yoritish tizimlarini professional loyihalash, oʻrnatish va bezash. Yorugʻlikni sanʼat darajasiga olib chiqamiz.",
@@ -148,7 +148,50 @@ const uzDictionary = {
     connect: "Aloqa",
     office: "Ofis",
     inspiring: "Ilhom bag‘ishlovchi yorug‘lik",
-    rights: "Barcha huquqlar himoyalangan",
+  },
+  privacy: {
+    backHome: "Bosh sahifaga",
+    eyebrow: "Huquqiy ma'lumot",
+    title: "Maxfiylik siyosati",
+    updated: "Yangilangan sana: 2026-yil 29-aprel",
+    intro:
+      "Ushbu siyosat AlmazovLight sayt orqali yuborilgan ariza va aloqa ma'lumotlarini qanday qayta ishlashini tushuntiradi.",
+    metaDescription:
+      "AlmazovLight maxfiylik siyosati: sayt arizalari, forma ma'lumotlari, email orqali yetkazish va saqlash muddatlari.",
+    sections: [
+      {
+        title: "Biz yig'adigan ma'lumotlar",
+        paragraphs: [
+          "Ariza yuborilganda ism, email, loyiha mavzusi, xabar matni, tanlangan til va texnik anti-spam maydonlari olinadi.",
+        ],
+      },
+      {
+        title: "Ma'lumotlardan foydalanish",
+        paragraphs: [
+          "Bu ma'lumotlar arizaga javob berish, loyiha bo'yicha muloqotni tayyorlash, spamning oldini olish va sayt xavfsizligini saqlash uchun ishlatiladi.",
+        ],
+      },
+      {
+        title: "Emailni qayta ishlash",
+        paragraphs: [
+          "Arizalar Resend orqali yetkaziladi. Email mazmuni tranzaksion xabarlarni yetkazish uchun Resend tomonidan qayta ishlanishi mumkin.",
+        ],
+      },
+      {
+        title: "Ma'lumotlarni ulashish",
+        paragraphs: [
+          "Biz shaxsiy ma'lumotlarni sotmaymiz. Ular faqat sayt ishlashi va arizalarni qayta ishlash uchun zarur servis provayderlariga berilishi mumkin.",
+        ],
+      },
+      {
+        title: "Saqlash muddati",
+        paragraphs: [
+          "Ariza ma'lumotlari muloqot, loyiha yozuvlari va oqilona ma'muriy vazifalar uchun kerak bo'lgan muddat davomida saqlanadi.",
+        ],
+      },
+    ],
+    contactTitle: "Maxfiylik bo'yicha aloqa",
+    contactText: "Maxfiylik bo'yicha savollar uchun bizga yozing:",
   },
   caseDetail: {
     backToCases: "Barcha loyihalarga qaytish",

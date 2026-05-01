@@ -4,8 +4,6 @@ export type LocalizedContactText = Record<Locale, string>;
 
 export type ContactInfo = {
   email: string;
-  phone: string;
-  phoneDisplay: string;
   telegram: string;
   whatsapp: string;
   instagram: string;
@@ -26,7 +24,7 @@ export type ContactFormSubmission = {
   topic: string;
   brief: string;
   locale: Locale;
-  website: string;
+  contactMethodConfirmation: string;
 };
 
 export type ContactFormFields = Pick<ContactFormSubmission, "name" | "email" | "topic" | "brief">;

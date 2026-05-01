@@ -9,8 +9,6 @@ import {
 
 export const contactInfo: ContactInfo = {
   email: getRequiredEnv(CONTACT_PUBLIC_ENV_KEYS.email),
-  phone: getRequiredEnv(CONTACT_PUBLIC_ENV_KEYS.phone),
-  phoneDisplay: getRequiredEnv(CONTACT_PUBLIC_ENV_KEYS.phoneDisplay),
   telegram: getRequiredNormalizedUrlEnv(CONTACT_PUBLIC_ENV_KEYS.telegram),
   whatsapp: getRequiredNormalizedUrlEnv(CONTACT_PUBLIC_ENV_KEYS.whatsapp),
   instagram: getRequiredNormalizedUrlEnv(CONTACT_PUBLIC_ENV_KEYS.instagram),

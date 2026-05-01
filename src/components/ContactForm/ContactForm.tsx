@@ -2,7 +2,7 @@
 
 import { type ChangeEvent, type FormEvent, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import { CONTACT_FORM_LIMITS } from "@/constants/contact-form";
+import { CONTACT_FORM_HONEYPOT_FIELD, CONTACT_FORM_LIMITS } from "@/constants/contact-form";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 import type {
@@ -30,9 +30,7 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
   const [fieldErrors, setFieldErrors] = useState<ContactFormFieldErrors>({});
   const [showValidation, setShowValidation] = useState(false);
 
-  const submittedStep = dict.contact.formStep.replace("1 / 2", "2 / 2");
   const isSubmitting = status === "submitting";
-  const isSubmitted = status === "submitted";
 
   const getErrorMessage = (code: ContactFormFieldErrorCode | undefined): string | null => {
     if (!code) {
@@ -64,6 +62,10 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
 
       setValues(nextValues);
 
+      if (status === "submitted" || status === "error") {
+        setStatus("idle");
+      }
+
       if (showValidation || touched[field]) {
         setFieldErrors(getContactFormFieldErrors(nextValues));
       }
@@ -81,7 +83,7 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const website = String(formData.get("website") ?? "");
+    const contactMethodConfirmation = String(formData.get(CONTACT_FORM_HONEYPOT_FIELD) ?? "");
 
     const nextErrors = getContactFormFieldErrors(values);
 
@@ -95,6 +97,7 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
     setFieldErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
+      setStatus("idle");
       return;
     }
 
@@ -108,7 +111,7 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
         },
         body: JSON.stringify({
           ...values,
-          website,
+          [CONTACT_FORM_HONEYPOT_FIELD]: contactMethodConfirmation,
           locale,
         }),
       });
@@ -127,33 +130,6 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className={styles.root} data-reveal>
-        <div className={styles.intro}>
-          <span className={styles.eyebrow}>{dict.contact.formIntro}</span>
-          <span className={styles.step}>{submittedStep}</span>
-        </div>
-        <div className={styles.success}>
-          <p className={styles.successMessage}>{dict.contact.sentMessage}</p>
-        </div>
-        <div className={[styles.row, styles.submitRow].join(" ")}>
-          <button
-            type="button"
-            className={styles.submitButton}
-            data-hover
-            onClick={() => setStatus("idle")}
-          >
-            {dict.contact.formIntro}
-            <svg viewBox="0 0 14 10" width="14" fill="none" stroke="currentColor" strokeWidth="1.4">
-              <path d="M1 5 H13 M9 1 L13 5 L9 9" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   const nameError = getVisibleError("name");
   const emailError = getVisibleError("email");
   const topicError = getVisibleError("topic");
@@ -162,15 +138,14 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
     <form className={styles.root} onSubmit={handleSubmit} data-reveal noValidate>
       <input
         type="text"
-        name="website"
+        name={CONTACT_FORM_HONEYPOT_FIELD}
         tabIndex={-1}
-        autoComplete="off"
+        autoComplete="new-password"
         className={styles.honeypot}
         aria-hidden="true"
       />
       <div className={styles.intro}>
         <span className={styles.eyebrow}>{dict.contact.formIntro}</span>
-        <span className={styles.step}>{dict.contact.formStep}</span>
       </div>
       <div className={styles.row}>
         <label className={styles.label}>{dict.contact.formName}</label>
@@ -267,6 +242,11 @@ export default function ContactForm({ dict, locale }: { dict: Dictionary; locale
       </div>
       {status === "error" ? (
         <div className={styles.errorStrip}>{dict.contact.sendError}</div>
+      ) : null}
+      {status === "submitted" ? (
+        <div className={styles.successStrip} aria-live="polite">
+          {dict.contact.sentMessage}
+        </div>
       ) : null}
     </form>
   );

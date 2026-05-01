@@ -2,6 +2,7 @@ import { defaultLocale, isLocale } from "@/i18n/config";
 import {
   CONTACT_FORM_EMAIL_PATTERN,
   CONTACT_FORM_ERROR_MESSAGES,
+  CONTACT_FORM_HONEYPOT_FIELD,
   CONTACT_FORM_LIMITS,
   CONTACT_FORM_SUBJECT_PREFIX,
 } from "@/constants/contact-form";
@@ -48,7 +49,7 @@ export function validateContactFormPayload(payload: unknown): ContactFormValidat
   const email = getTrimmedString(record.email).toLowerCase();
   const topic = getTrimmedString(record.topic);
   const brief = getTrimmedString(record.brief);
-  const website = getTrimmedString(record.website);
+  const contactMethodConfirmation = getTrimmedString(record[CONTACT_FORM_HONEYPOT_FIELD]);
   const localeValue = getTrimmedString(record.locale);
   const locale = isLocale(localeValue) ? localeValue : defaultLocale;
 
@@ -78,8 +79,8 @@ export function validateContactFormPayload(payload: unknown): ContactFormValidat
     return { ok: false, error: CONTACT_FORM_ERROR_MESSAGES.invalidBrief };
   }
 
-  if (website.length > CONTACT_FORM_LIMITS.websiteMax) {
-    return { ok: false, error: CONTACT_FORM_ERROR_MESSAGES.invalidWebsite };
+  if (contactMethodConfirmation.length > CONTACT_FORM_LIMITS.honeypotMax) {
+    return { ok: false, error: CONTACT_FORM_ERROR_MESSAGES.invalidHoneypot };
   }
 
   return {
@@ -90,13 +91,13 @@ export function validateContactFormPayload(payload: unknown): ContactFormValidat
       topic,
       brief,
       locale,
-      website,
+      contactMethodConfirmation,
     },
   };
 }
 
 export function isBotContactFormSubmission(submission: ContactFormSubmission): boolean {
-  return Boolean(submission.website);
+  return Boolean(submission.contactMethodConfirmation);
 }
 
 export function buildContactLeadSubject(submission: ContactFormSubmission): string {

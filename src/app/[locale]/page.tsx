@@ -43,7 +43,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     name: "AlmazovLight",
     description: dict.meta.description,
     url: getAbsoluteSiteUrl(`/${locale}`),
-    telephone: contactInfo.phone,
     email: contactInfo.email,
     address: {
       "@type": "PostalAddress",

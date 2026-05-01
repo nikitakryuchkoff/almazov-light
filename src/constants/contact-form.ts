@@ -7,8 +7,10 @@ export const CONTACT_FORM_LIMITS = {
   topicMin: 2,
   topicMax: 120,
   briefMax: 2000,
-  websiteMax: 120,
+  honeypotMax: 120,
 } as const;
+
+export const CONTACT_FORM_HONEYPOT_FIELD = "contactMethodConfirmation";
 
 export const CONTACT_FORM_ENV_KEYS = {
   apiKey: "RESEND_API_KEY",
@@ -18,8 +20,6 @@ export const CONTACT_FORM_ENV_KEYS = {
 
 export const CONTACT_PUBLIC_ENV_KEYS = {
   email: "NEXT_PUBLIC_CONTACT_EMAIL",
-  phone: "NEXT_PUBLIC_CONTACT_PHONE",
-  phoneDisplay: "NEXT_PUBLIC_CONTACT_PHONE_DISPLAY",
   telegram: "NEXT_PUBLIC_CONTACT_TELEGRAM",
   whatsapp: "NEXT_PUBLIC_CONTACT_WHATSAPP",
   instagram: "NEXT_PUBLIC_CONTACT_INSTAGRAM",
@@ -35,7 +35,7 @@ export const CONTACT_FORM_ERROR_MESSAGES = {
   invalidEmail: "Email address is invalid.",
   invalidTopic: "Topic must be between 2 and 120 characters.",
   invalidBrief: "Brief must be 2000 characters or fewer.",
-  invalidWebsite: "Website is invalid.",
+  invalidHoneypot: "Invalid request body.",
   sendFailed: "Unable to send email.",
 } as const;
 

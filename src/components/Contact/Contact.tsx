@@ -48,12 +48,6 @@ export default function Contact({ dict, locale }: { dict: Dictionary; locale: Lo
                 </div>
               </div>
               <div>
-                <div className={styles.key}>{dict.contact.direct}</div>
-                <div className={styles.value}>
-                  <a href={`tel:${contactInfo.phone}`}>{contactInfo.phoneDisplay}</a>
-                </div>
-              </div>
-              <div>
                 <div className={styles.key}>{dict.contact.address}</div>
                 <div className={styles.value}>{contactInfo.address[locale]}</div>
               </div>

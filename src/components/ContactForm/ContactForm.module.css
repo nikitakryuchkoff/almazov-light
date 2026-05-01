@@ -33,27 +33,6 @@
   background: var(--amber);
 }
 
-.step {
-  color: var(--ink-mute);
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-}
-
-.success {
-  padding: 28px 24px 30px;
-  background: var(--bg);
-}
-
-.successMessage {
-  max-width: 34ch;
-  margin: 0;
-  color: var(--ink);
-  font-size: clamp(22px, 3vw, 32px);
-  font-weight: 300;
-  line-height: 1.2;
-}
-
 .row {
   display: grid;
   grid-template-columns: 140px 1fr;
@@ -214,6 +193,14 @@
   background: #3a1917;
 }
 
+.successStrip {
+  padding: 16px 24px 18px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.5;
+  background: rgb(var(--brand-rgb) / 0.18);
+}
+
 .honeypot {
   position: absolute;
   width: 1px;
@@ -249,10 +236,7 @@
     padding: 16px 18px;
   }
 
-  .success {
-    padding: 22px 18px 24px;
-  }
-
+  .successStrip,
   .errorStrip,
   .row,
   .rowTextarea {
@@ -267,7 +251,6 @@
 
 @media (max-width: 530px) {
   .eyebrow,
-  .step,
   .submitButton {
     letter-spacing: 0.12em;
   }
