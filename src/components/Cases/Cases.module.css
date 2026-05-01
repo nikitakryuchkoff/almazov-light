@@ -73,7 +73,6 @@
   color: var(--ink);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 10px;
-  letter-spacing: 0.18em;
   line-height: 1;
   text-transform: uppercase;
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
