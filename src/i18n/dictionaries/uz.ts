@@ -147,7 +147,6 @@ const uzDictionary = {
     navigate: "Navigatsiya",
     connect: "Aloqa",
     office: "Ofis",
-    inspiring: "Ilhom bag‘ishlovchi yorug‘lik",
   },
   privacy: {
     backHome: "Bosh sahifaga",

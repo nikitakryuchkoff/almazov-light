@@ -144,7 +144,6 @@ const enDictionary = {
     navigate: "Navigate",
     connect: "Connect",
     office: "Office",
-    inspiring: "Inspiring Light",
   },
   privacy: {
     backHome: "Back to home",

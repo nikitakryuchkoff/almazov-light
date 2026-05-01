@@ -69,7 +69,6 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
         <div className={styles.bottom}>
           <div className={styles.bottomLinks}>
             <Link href={`/${locale}/privacy-policy`}>{dict.footer.privacyPolicy}</Link>
-            <span>{dict.footer.inspiring}</span>
             <span>Powered by First</span>
           </div>
         </div>

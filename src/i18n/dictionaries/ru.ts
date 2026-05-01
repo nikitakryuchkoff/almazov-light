@@ -147,7 +147,6 @@ const ruDictionary = {
     navigate: "Навигация",
     connect: "Связь",
     office: "Офис",
-    inspiring: "Свет, который вдохновляет",
   },
   privacy: {
     backHome: "На главную",
